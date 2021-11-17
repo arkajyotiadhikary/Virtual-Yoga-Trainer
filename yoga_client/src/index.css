@@ -1,11 +1,15 @@
+* {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
 #root {
     height: 100vh;
 }
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
         "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
+        "Helvetica Neue", sans-serif; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -23,17 +27,36 @@ body {
     height: 80vh;
 }
 .col-body-right {
+    font-weight: 400;
+    font-size: 2vh;
+    background: rgb(187, 222, 251);
+    background: linear-gradient(
+        90deg,
+        rgba(187, 222, 251, 1) 0%,
+        rgba(139, 199, 249, 1) 100%
+    );
+    color: #0d47a1;
 }
 .col-body-left {
-    background-color: #90caf9;
+}
+.col-body-middle {
+    background-color: #bbdefb;
 }
 .pose-detect {
+    z-index: 100;
+    height: 80vh;
     position: absolute;
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
     border-color: #1565c0;
-    margin-top: 20px;
+}
+.col-body-left .body-workoutstates {
+    font-weight: 400;
+    background-color: #42a5f5;
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 .pose-detect .webcam {
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
