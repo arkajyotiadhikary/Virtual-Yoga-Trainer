@@ -11,13 +11,13 @@ const PoseDetect = () => {
     //  Load posenet
     const runPosenet = async () => {
         const net = await posenet.load({
-            inputResolution: { width: 640, height: 480 },
+            inputResolution: { width: 580, height: 435 },
             scale: 0.5,
         });
         //
         setInterval(() => {
             detect(net);
-        }, 100);
+        }, 1000);
     };
 
     const detect = async (net) => {
@@ -53,8 +53,9 @@ const PoseDetect = () => {
     };
     runPosenet();
     return (
-        <div>
+        <div className="pose-detect">
             <Webcam
+                className="webcam"
                 ref={webcamRef}
                 style={{
                     position: "absolute",
@@ -64,8 +65,8 @@ const PoseDetect = () => {
                     right: 0,
                     textAlign: "center",
                     zindex: 9,
-                    width: 640,
-                    height: 480,
+                    width: 580,
+                    height: 435,
                 }}
             />
             <canvas
@@ -78,8 +79,8 @@ const PoseDetect = () => {
                     right: 0,
                     textAlign: "center",
                     zindex: 9,
-                    width: 640,
-                    height: 480,
+                    width: 580,
+                    height: 435,
                 }}
             />
         </div>
