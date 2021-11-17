@@ -1,6 +1,6 @@
 const IOTStates = () => {
     return (
-        <div className="card  bg-transparent border-0">
+        <div className="card IOTStates bg-transparent border-0">
             <div className="card-body">
                 <h5 className="card-title">Heart Beat</h5>
                 <p className="card-text">0</p>

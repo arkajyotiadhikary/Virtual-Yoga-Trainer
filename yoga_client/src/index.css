@@ -1,6 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Arvo");
 * {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
+    font-family: "Arvo";
 }
 #root {
     height: 100vh;
@@ -22,6 +22,10 @@ body {
         rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+.navbar .brand-name {
+    color: #0d47a1;
+}
+
 /* body */
 .body-row {
     height: 80vh;
@@ -29,15 +33,28 @@ body {
 .col-body-right {
     font-weight: 400;
     font-size: 2vh;
-    background: rgb(187, 222, 251);
-    background: linear-gradient(
-        90deg,
-        rgba(187, 222, 251, 1) 0%,
-        rgba(139, 199, 249, 1) 100%
-    );
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: #0d47a1;
+    background-color: #8bc7f9;
 }
 .col-body-left {
+}
+.IOTStates {
+    font-weight: 400;
+    font-size: large;
+}
+.col-body-left .body-workoutstates {
+    font-weight: 400;
+    background-color: #42a5f5;
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.col-body-left .tut-pos {
+    height: 40vh;
+    font-weight: 400;
+    background-color: #42a5f5;
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 .col-body-middle {
     background-color: #bbdefb;
@@ -52,16 +69,9 @@ body {
     justify-content: center;
     border-color: #1565c0;
 }
-.col-body-left .body-workoutstates {
-    font-weight: 400;
-    background-color: #42a5f5;
-    color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
 .pose-detect .webcam {
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
-        rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
-        rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 /* footer */
