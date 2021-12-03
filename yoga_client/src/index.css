@@ -15,6 +15,10 @@ body {
 }
 
 /* main */
+.calori-bar {
+    height: 2rem;
+}
+
 #carouselExampleIndicators .carousel-inner {
     height: 30rem;
     width: 50rem;
@@ -64,10 +68,16 @@ body {
 .bodyfocus-preview-chest .background-img {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 30px;
-    color: #000000;
+    color: #ffffff;
     padding: 2%;
     margin: 1rem;
-    background-image: url(https://www.thehealthsite.com/wp-content/uploads/2017/02/chest-opening-poses-THS.jpg);
+    background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(52, 52, 52, 0.8) 100%
+        ),
+        url(https://www.thehealthsite.com/wp-content/uploads/2017/02/chest-opening-poses-THS.jpg);
     background-position: center;
     height: 20rem;
     transition: all 0.3s ease-in-out;
@@ -85,7 +95,13 @@ body {
     color: #ffffff;
     padding: 2%;
     margin: 1rem;
-    background-image: url(https://mindbodygreen-res.cloudinary.com/image/upload/c_crop,x_0,y_0,w_1200,h_800/c_fill,w_800,h_400,g_auto,q_85,fl_lossy,f_jpg/org/3y03qt0d4kc55j2ht.jpg);
+    background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(52, 52, 52, 0.8) 100%
+        ),
+        url(https://mindbodygreen-res.cloudinary.com/image/upload/c_crop,x_0,y_0,w_1200,h_800/c_fill,w_800,h_400,g_auto,q_85,fl_lossy,f_jpg/org/3y03qt0d4kc55j2ht.jpg);
     background-position: center;
     height: 20rem;
     transition: all 0.3s ease-in-out;
@@ -100,10 +116,16 @@ body {
 .bodyfocus-preview-belly .background-img {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 30px;
-    color: #000000;
+    color: #ffffff;
     padding: 2%;
     margin: 1rem;
-    background-image: url(https://media.istockphoto.com/photos/young-attractive-woman-in-uddiyana-bandha-pose-grey-studio-back-picture-id664715880?b=1&k=20&m=664715880&s=170667a&w=0&h=nQOd0ksZbfWBfHx2eNUkW1suespkuLZTBnSKQZ7lgrw=);
+    background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(52, 52, 52, 0.8) 100%
+        ),
+        url(https://media.istockphoto.com/photos/young-attractive-woman-in-uddiyana-bandha-pose-grey-studio-back-picture-id664715880?b=1&k=20&m=664715880&s=170667a&w=0&h=nQOd0ksZbfWBfHx2eNUkW1suespkuLZTBnSKQZ7lgrw=);
     background-position: center;
     background-size: cover;
     height: 20rem;
@@ -119,10 +141,16 @@ body {
 .bodyfocus-preview-arm .background-img {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 30px;
-    color: #000000;
+    color: #ffffff;
     padding: 2%;
     margin: 1rem;
-    background-image: url(https://media.istockphoto.com/photos/you-cant-change-the-world-but-you-can-change-yours-picture-id1277539946?b=1&k=20&m=1277539946&s=170667a&w=0&h=Es12PLWFdl60n2q0ZnNSEE_q5JVNYDsNZuf9YeEGvrs=);
+    background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(52, 52, 52, 0.8) 100%
+        ),
+        url(https://media.istockphoto.com/photos/you-cant-change-the-world-but-you-can-change-yours-picture-id1277539946?b=1&k=20&m=1277539946&s=170667a&w=0&h=Es12PLWFdl60n2q0ZnNSEE_q5JVNYDsNZuf9YeEGvrs=);
     background-position: center;
     background-size: cover;
     height: 20rem;
