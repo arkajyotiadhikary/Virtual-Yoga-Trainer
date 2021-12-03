@@ -14,6 +14,84 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* main */
+#carouselExampleIndicators .carousel-inner {
+    height: 30rem;
+    width: 50rem;
+}
+
+#carouselExampleIndicators .carousel-item > img {
+    align-items: center;
+}
+
+.daily-preview-1 {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 1000;
+    margin: 2%;
+    padding: 2%;
+    background-image: url(https://images.thequint.com/thequint%2F2017-01%2F53d07c30-ea36-45e7-aaff-5de33b041db9%2Fyoga%20hero.png?rect=0%2C0%2C2000%2C1125);
+    background-position: center;
+    background-size: cover;
+    height: 20rem;
+    width: 50%;
+    transition: all 0.3s ease-in-out;
+}
+.daily-preview-1:hover {
+    transform: scale(1.1);
+}
+
+.daily-preview-2 {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 1000;
+    margin: 2%;
+    padding: 2%;
+    background-image: url(https://media4.s-nbcnews.com/i/MSNBC/Components/Video/201710/b_ost_SleepYoga_171012.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 20rem;
+    width: 50%;
+    transition: all 0.3s ease-in-out;
+}
+.daily-preview-2:hover {
+    transform: scale(1.1);
+}
+
+.bodyfocus-preview-1 .background-img {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 1000;
+    padding: 2%;
+    margin: 2rem;
+    background-image: url(https://images.thequint.com/thequint%2F2017-01%2F53d07c30-ea36-45e7-aaff-5de33b041db9%2Fyoga%20hero.png?rect=0%2C0%2C2000%2C1125);
+    background-position: center;
+    height: 20rem;
+    transition: all 0.3s ease-in-out;
+}
+.bodyfocus-preview-1 .background-img:hover {
+    transform: scale(1.1);
+}
+
+.bodyfocus-preview-2 .background-img {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 1000;
+    padding: 2%;
+    margin: 2rem;
+    background-image: url(https://media4.s-nbcnews.com/i/MSNBC/Components/Video/201710/b_ost_SleepYoga_171012.jpg);
+    background-position: center;
+    height: 20rem;
+    transition: all 0.3s ease-in-out;
+}
+.bodyfocus-preview-2 .background-img:hover {
+    transform: scale(1.1);
+}
+
 /* nav */
 .navbar {
     height: 5vh;
