@@ -54,21 +54,23 @@ const PoseDetect = () => {
     runPosenet();
     return (
         <div className="pose-detect">
-            {/* <Webcam
-                className="webcam"
-                ref={webcamRef}
-                style={{
-                    position: "absolute",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    left: 0,
-                    right: 0,
-                    textAlign: "center",
-                    zindex: 9,
-                    width: 580,
-                    height: 435,
-                }}
-            /> */}
+            {
+                <Webcam
+                    className="webcam"
+                    ref={webcamRef}
+                    style={{
+                        position: "absolute",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                        left: 0,
+                        right: 0,
+                        textAlign: "center",
+                        zindex: 9,
+                        width: 580,
+                        height: 435,
+                    }}
+                />
+            }
             <canvas
                 ref={canvasRef}
                 style={{

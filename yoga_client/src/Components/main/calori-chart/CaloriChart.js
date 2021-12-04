@@ -17,18 +17,27 @@ const CaloriChart = () => {
                 label: "Calories Burn This Week",
                 data: [55, 23, 96, 100, 67, 89, 10],
                 backgroundColor: ["rgba(13, 71, 161, 0.6)"],
-                borderWidth: 1,
             },
         ],
     };
 
     return (
         <Bar
-            style={{ height: "5rem" }}
+            className="calori-bar"
             data={dumData}
             height="1500px"
             width="1500px"
-            options={{ maintainAspectRatio: false }}
+            options={{
+                scales: {
+                    x: {
+                        display: false,
+                    },
+                    y: {
+                        display: false,
+                    },
+                },
+                maintainAspectRatio: false,
+            }}
         />
     );
 };

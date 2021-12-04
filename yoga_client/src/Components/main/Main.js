@@ -1,5 +1,5 @@
 import ProfileView from "./profile-view/ProfileView";
-import Chart from "chart.js/auto";
+import "chart.js/auto";
 import LevelPreview from "./preview/LevelPreview";
 import BodyFocusPreview from "./preview/BodyFocusPreview";
 import DailyChallangePreview from "./preview/DailyChallangePreview";
