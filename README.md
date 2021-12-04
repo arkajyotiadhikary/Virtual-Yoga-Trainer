@@ -5,13 +5,13 @@
 ### Install Dependencies:
 
 ```jsx
-cd client
+cd yoga_client 
 npm install
 ```
 
 ### Client Start:
 
 ```jsx
-cd client
+cd yoga_client
 npm start
 ```
