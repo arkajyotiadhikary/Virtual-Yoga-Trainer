@@ -48,7 +48,9 @@ const ProfileCard = () => {
                     </div>
                     <div class="card-footer bg-transparent">
                         <button class="btn btn-sm btn-outline-primary text-end">
+                        <a href="/signout">
                             Logout
+                        </a>
                         </button>
                     </div>
                 </div>
