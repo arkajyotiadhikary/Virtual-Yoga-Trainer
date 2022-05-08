@@ -19,4 +19,6 @@ npm start
 |--|--|
 | http://localhost:3000/ | Home page |
 | http://localhost:3000/signup | SignUp Page |
+| http://localhost:3000/signin | SignIn Page |
+| http://localhost:3000/signout | SignOut Link |
 | http://localhost:3000/workout | Workout Page |

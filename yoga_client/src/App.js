@@ -13,6 +13,9 @@ import Main from "./components/main/Main";
 import Signup from "./components/sign-up/Signup";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import SignIn from "./components/sign-in/Signin";
+import SignOut from "./components/sign-out/Signout";
+
 function App() {
     return (
         <div className="App h-100">
@@ -34,6 +37,16 @@ function App() {
                         path="/signup"
                         caseSensitive={false}
                         element={<Signup />}
+                    />
+                    <Route
+                        path="/signin"
+                        caseSensitive={false}
+                        element={<SignIn />}
+                    />
+                    <Route
+                        path="/signout"
+                        caseSensitive={false}
+                        element={<SignOut />}
                     />
                 </Routes>
             </Router>
