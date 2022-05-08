@@ -1,11 +1,11 @@
 const Footer = () => {
     return (
-        <footer class="site-footer mt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
+        <footer className="site-footer mt-5">
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-12 col-md-6">
                         <h6>About</h6>
-                        <p class="text-justify">
+                        <p className="text-justify">
                             Ea rebum sadipscing lorem nonumy duo sed elitr amet
                             lorem dolore. Sadipscing erat et diam stet. Sea
                             justo magna voluptua accusam. Nonumy kasd sadipscing
@@ -16,9 +16,9 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    <div class="col-xs-6 col-md-3">
+                    <div className="col-xs-6 col-md-3">
                         <h6>Categories</h6>
-                        <ul class="footer-links">
+                        <ul className="footer-links">
                             <li>
                                 <a href="http://scanfcode.com/category/c-language/">
                                     af
@@ -52,9 +52,9 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div class="col-xs-6 col-md-3">
+                    <div className="col-xs-6 col-md-3">
                         <h6>Quick Links</h6>
-                        <ul class="footer-links">
+                        <ul className="footer-links">
                             <li>
                                 <a href="http://scanfcode.com/about/">
                                     About Us
@@ -85,34 +85,34 @@ const Footer = () => {
                 </div>
                 <hr />
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-sm-6 col-xs-12">
-                        <p class="copyright-text">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-8 col-sm-6 col-xs-12">
+                        <p className="copyright-text">
                             Copyright &copy; 2021 All Rights Reserved
                         </p>
                     </div>
 
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <ul class="social-icons">
+                    <div className="col-md-4 col-sm-6 col-xs-12">
+                        <ul className="social-icons">
                             <li>
-                                <a class="facebook" href="/#">
-                                    <i class="fa fa-facebook"></i>
+                                <a className="facebook" href="/#">
+                                    <i className="fa fa-facebook"></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="twitter" href="/#">
-                                    <i class="fa fa-twitter"></i>
+                                <a className="twitter" href="/#">
+                                    <i className="fa fa-twitter"></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="dribbble" href="/#">
-                                    <i class="fa fa-dribbble"></i>
+                                <a className="dribbble" href="/#">
+                                    <i className="fa fa-dribbble"></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="linkedin" href="/#">
-                                    <i class="fa fa-linkedin"></i>
+                                <a className="linkedin" href="/#">
+                                    <i className="fa fa-linkedin"></i>
                                 </a>
                             </li>
                         </ul>
