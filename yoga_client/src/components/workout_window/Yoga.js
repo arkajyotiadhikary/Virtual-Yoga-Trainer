@@ -50,6 +50,8 @@ function Yoga() {
         if ((currentTime - startingTime) / 1000 > bestPerform) {
             setBestPerform(timeDiff);
         }
+
+        console.log(bestPerform);
     }, [currentTime]);
 
     useEffect(() => {
