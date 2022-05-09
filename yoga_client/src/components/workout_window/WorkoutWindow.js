@@ -1,10 +1,9 @@
-import PoseDetect from "./PoseDetect";
 import Body from "./body/Body";
-
+import Yoga from "./Yoga";
 const WorkoutWindow = () => {
     return (
         <div>
-            <PoseDetect />
+            <Yoga />
             <Body />
         </div>
     );
