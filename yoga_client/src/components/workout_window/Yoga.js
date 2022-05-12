@@ -4,10 +4,9 @@ import React, { useRef, useState, useEffect } from "react";
 import backend from "@tensorflow/tfjs-backend-webgl";
 import Webcam from "react-webcam";
 import { count } from "../../utils/music";
+import "./Yoga.css";
 
 // import Instructions from "../../components/Instrctions/Instructions";
-
-// import "./Yoga.css";
 
 // import DropDown from "../../components/DropDown/DropDown";
 import { poseImages } from "../../utils/pose_images";
@@ -272,7 +271,7 @@ function Yoga() {
                         id="webcam"
                         ref={webcamRef}
                         style={{
-                            position: "absolute",
+                            // position: "absolute",
                             top: 22,
                         }}
                     />

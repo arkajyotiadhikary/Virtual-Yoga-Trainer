@@ -1,4 +1,6 @@
 import ProfileCard from "./ProfileCard";
+import "./Navbar.css";
+
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg mt-4 p-0">

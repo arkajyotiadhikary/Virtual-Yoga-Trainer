@@ -1,5 +1,6 @@
 import IOTStates from "./IOTStates";
 import WorkoutStates from "./WorkoutStates";
+import "./Body.css";
 
 const Body = () => {
     return (
