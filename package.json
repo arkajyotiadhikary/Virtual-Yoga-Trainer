@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ManishShah120/Virtual-Yoga-Trainer#readme",
   "dependencies": {
+    "@tensorflow-models/pose-detection": "^2.0.0",
     "chart.js": "^3.6.1",
     "react-chartjs-2": "^4.0.0"
   }
