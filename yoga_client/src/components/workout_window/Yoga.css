@@ -1,10 +1,50 @@
 .yoga-container {
-    z-index: 100;
     height: 80vh;
+
     position: absolute;
     border-color: #1565c0;
 }
 .yoga-container > div > #webcam {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    top: 22;
+    position: absolute;
+    z-index: -100;
+}
+
+.cam {
+    width: 580px;
+    height: 400px;
+}
+.yoga-container > div > canvas {
+    position: absolute;
+    top: 22;
+}
+
+.states {
+    height: "20rem";
+    z-index: 100;
+}
+
+.state {
+    border-radius: 50px;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    z-index: 100;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.state#progress {
+    background-color: #94d2bd;
+}
+.state#heart-beat {
+    background-color: #e63946;
+}
+.state#calori-burn {
+    background-color: #e9c46a;
+}
+.state#time-spend {
+    background-color: #457b9d;
+}
+.state#accuracy {
+    background-color: #80ed99;
 }

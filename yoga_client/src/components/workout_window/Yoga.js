@@ -238,6 +238,8 @@ function Yoga() {
     const startYoga = () => {
         setIsStartPose(true);
         runMovenet();
+        webcamRef.current.video.videoHeight = 580;
+        webcamRef.current.video.videoWidth = 400;
     };
 
     const stopPose = () => {
@@ -254,40 +256,64 @@ function Yoga() {
                             src="https://www.ekhartyoga.com/media/images/articles/content/Tree-pose-Vrksasana-Ekhart-Yoga.jpg"
                             alt=""
                             style={{
-                                width: "640px",
-                                height: "480px",
+                                width: "580px",
+                                height: "400px",
                                 objectFit: "cover",
                             }}
                         />
                     </div>
 
-                    <div className="d-flex justify-content-center align-items-center w-100">
+                    <div className="cam d-flex justify-content-center align-items-center">
                         <Webcam
-                            className="shadow"
-                            width="640px"
-                            height="480px"
+                            className="rounded"
+                            width="580"
+                            height="400px"
                             id="webcam"
                             ref={webcamRef}
-                            style={{
-                                position: "absolute",
-                                top: 22,
-                            }}
                         ></Webcam>
                         <canvas
                             ref={canvasRef}
                             id="my-canvas"
-                            width="640px"
-                            height="480px"
-                            style={{
-                                position: "absolute",
-                                top: 22,
-                                zIndex: 1,
-                            }}
+                            width="580px"
+                            height="400px"
                         ></canvas>
+                        <div className="states d-flex flex-column justify-content-around align-items-end w-100 h-100 me-5">
+                            <div
+                                className="d-flex justify-content-center align-items-center state"
+                                id="progress"
+                            >
+                                <span>40%</span>
+                            </div>
+                            <div
+                                className="d-flex justify-content-center align-items-center state"
+                                id="heart-beat"
+                            >
+                                <span>40%</span>
+                            </div>
+                            <div
+                                className="d-flex justify-content-center align-items-center state"
+                                id="calori-burn"
+                            >
+                                <span>40%</span>
+                            </div>
+                            <div
+                                className="d-flex justify-content-center align-items-center state"
+                                id="time-spend"
+                            >
+                                <span>40%</span>
+                            </div>
+                            <div
+                                className="d-flex justify-content-center align-items-center state"
+                                id="accuracy"
+                            >
+                                <span>40%</span>
+                            </div>
+                        </div>
                         <button
                             onClick={stopPose}
-                            className="btn btn-success"
+                            className="btn text-white"
                             style={{
+                                backgroundColor: "#1d3557",
                                 top: 450,
                                 marginRight: "50",
                                 position: "absolute",
@@ -307,8 +333,9 @@ function Yoga() {
         <div className="yoga-container w-100 d-flex justify-content-center">
             <button
                 onClick={startYoga}
-                className="btn btn-success"
+                className="btn text-white"
                 style={{
+                    backgroundColor: "#1d3557",
                     top: 450,
                     marginRight: "50",
                     position: "absolute",

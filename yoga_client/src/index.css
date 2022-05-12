@@ -2,10 +2,9 @@
 * {
     font-family: inherit;
 }
-#root {
-    height: 100vh;
-}
+
 body {
+    background-color: #f1faee;
     margin: 0;
     /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
         "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
