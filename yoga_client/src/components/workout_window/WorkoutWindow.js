@@ -1,4 +1,3 @@
-import Body from "./body/Body";
 import Yoga from "./Yoga";
 const WorkoutWindow = () => {
     return (

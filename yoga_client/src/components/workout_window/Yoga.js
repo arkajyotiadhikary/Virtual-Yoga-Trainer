@@ -247,46 +247,58 @@ function Yoga() {
 
     if (isStartPose) {
         return (
-            <div className="yoga-container w-100">
-                <div className="d-flex justify-content-center">
-                    <button
-                        onClick={stopPose}
-                        className="btn btn-success"
-                        style={{
-                            top: 450,
-                            marginRight: "50",
-                            position: "absolute",
-                            zIndex: 100,
-                        }}
-                    >
-                        Stop Pose
-                    </button>
-                </div>
+            <div>
+                <div className="yoga-container w-100 d-flex justify-content-around align-items-center">
+                    <div className="yoga-image">
+                        <img
+                            src="https://www.ekhartyoga.com/media/images/articles/content/Tree-pose-Vrksasana-Ekhart-Yoga.jpg"
+                            alt=""
+                            style={{
+                                width: "640px",
+                                height: "480px",
+                                objectFit: "cover",
+                            }}
+                        />
+                    </div>
 
-                <div className="d-flex justify-content-center align-items-center w-100">
-                    <Webcam
-                        className="shadow"
-                        width="640px"
-                        height="480px"
-                        id="webcam"
-                        ref={webcamRef}
-                        style={{
-                            // position: "absolute",
-                            top: 22,
-                        }}
-                    />
-                    <canvas
-                        ref={canvasRef}
-                        id="my-canvas"
-                        width="640px"
-                        height="480px"
-                        style={{
-                            position: "absolute",
-                            top: 22,
-                            zIndex: 1,
-                        }}
-                    ></canvas>
+                    <div className="d-flex justify-content-center align-items-center w-100">
+                        <Webcam
+                            className="shadow"
+                            width="640px"
+                            height="480px"
+                            id="webcam"
+                            ref={webcamRef}
+                            style={{
+                                position: "absolute",
+                                top: 22,
+                            }}
+                        ></Webcam>
+                        <canvas
+                            ref={canvasRef}
+                            id="my-canvas"
+                            width="640px"
+                            height="480px"
+                            style={{
+                                position: "absolute",
+                                top: 22,
+                                zIndex: 1,
+                            }}
+                        ></canvas>
+                        <button
+                            onClick={stopPose}
+                            className="btn btn-success"
+                            style={{
+                                top: 450,
+                                marginRight: "50",
+                                position: "absolute",
+                                zIndex: 100,
+                            }}
+                        >
+                            Stop Pose
+                        </button>
+                    </div>
                 </div>
+                <div className="d-flex justify-content-center"></div>
             </div>
         );
     }
