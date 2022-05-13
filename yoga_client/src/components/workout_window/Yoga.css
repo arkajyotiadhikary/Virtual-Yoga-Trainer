@@ -1,13 +1,18 @@
 .yoga-container {
-    height: 80vh;
-
+    height: 65vh;
+    background-color: #f1faee;
     position: absolute;
     border-color: #1565c0;
 }
 .yoga-container > div > #webcam {
     top: 22;
     position: absolute;
-    z-index: -100;
+}
+
+.yoga-image > img {
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .cam {
@@ -24,27 +29,54 @@
     z-index: 100;
 }
 
-.state {
+.out-state {
     border-radius: 50px;
     text-align: center;
     height: 50px;
     width: 50px;
-    z-index: 100;
+    z-index: 99;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.state {
+    font-weight: 400;
+    border-radius: 50px;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    z-index: 100;
+}
+
+.state > span {
+    font-weight: 400;
 }
 
 .state#progress {
-    background-color: #94d2bd;
+    background-color: hsl(160, 41%, 70%);
+}
+.out-state#progress {
+    background-color: hsl(160, 41%, 45%);
 }
 .state#heart-beat {
     background-color: #e63946;
 }
+.out-state#heart-beat {
+    background-color: hsl(355, 78%, 31%);
+}
 .state#calori-burn {
     background-color: #e9c46a;
+}
+.out-state#calori-burn {
+    background-color: hsl(43, 74%, 41%);
 }
 .state#time-spend {
     background-color: #457b9d;
 }
+.out-state#time-spend {
+    background-color: hsl(203, 39%, 19%);
+}
 .state#accuracy {
     background-color: #80ed99;
+}
+.out-state#accuracy {
+    background-color: hsl(134, 75%, 45%);
 }

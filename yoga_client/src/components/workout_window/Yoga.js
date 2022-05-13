@@ -265,7 +265,6 @@ function Yoga() {
 
                     <div className="cam d-flex justify-content-center align-items-center">
                         <Webcam
-                            className="rounded"
                             width="580"
                             height="400px"
                             id="webcam"
@@ -279,45 +278,71 @@ function Yoga() {
                         ></canvas>
                         <div className="states d-flex flex-column justify-content-around align-items-end w-100 h-100 me-5">
                             <div
-                                className="d-flex justify-content-center align-items-center state"
+                                className="d-flex justify-content-center align-items-center out-state"
                                 id="progress"
                             >
-                                <span>40%</span>
+                                <div
+                                    className="state d-flex justify-content-center align-items-center"
+                                    id="progress"
+                                >
+                                    <span>40%</span>
+                                </div>
                             </div>
                             <div
-                                className="d-flex justify-content-center align-items-center state"
+                                className="d-flex justify-content-center align-items-center out-state"
                                 id="heart-beat"
                             >
-                                <span>40%</span>
+                                <div
+                                    className="state d-flex justify-content-center align-items-center"
+                                    id="heart-beat"
+                                >
+                                    <span>40%</span>
+                                </div>
                             </div>
                             <div
-                                className="d-flex justify-content-center align-items-center state"
+                                className="d-flex justify-content-center align-items-center out-state"
                                 id="calori-burn"
                             >
-                                <span>40%</span>
+                                <div
+                                    className="state d-flex justify-content-center align-items-center"
+                                    id="calori-burn"
+                                >
+                                    <span>40%</span>
+                                </div>
                             </div>
                             <div
-                                className="d-flex justify-content-center align-items-center state"
+                                className="d-flex justify-content-center align-items-center out-state"
                                 id="time-spend"
                             >
-                                <span>40%</span>
+                                <div
+                                    className="state d-flex justify-content-center align-items-center"
+                                    id="time-spend"
+                                >
+                                    <span>40%</span>
+                                </div>
                             </div>
                             <div
-                                className="d-flex justify-content-center align-items-center state"
+                                className="d-flex justify-content-center align-items-center out-state"
                                 id="accuracy"
                             >
-                                <span>40%</span>
+                                <div
+                                    className="state d-flex justify-content-center align-items-center"
+                                    id="accuracy"
+                                >
+                                    <span>40%</span>
+                                </div>
                             </div>
                         </div>
                         <button
                             onClick={stopPose}
                             className="btn text-white"
                             style={{
+                                top: 350,
                                 backgroundColor: "#1d3557",
-                                top: 450,
                                 marginRight: "50",
                                 position: "absolute",
                                 zIndex: 100,
+                                fontWeight: 600,
                             }}
                         >
                             Stop Pose
@@ -336,7 +361,7 @@ function Yoga() {
                 className="btn text-white"
                 style={{
                     backgroundColor: "#1d3557",
-                    top: 450,
+                    top: 350,
                     marginRight: "50",
                     position: "absolute",
                     zIndex: 100,
