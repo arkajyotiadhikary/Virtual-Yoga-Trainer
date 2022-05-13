@@ -8,6 +8,8 @@ import "./Yoga.css";
 
 // import Instructions from "../../components/Instrctions/Instructions";
 
+import tree_pose from "./images/tree-pose.png";
+
 // import DropDown from "../../components/DropDown/DropDown";
 import { poseImages } from "../../utils/pose_images";
 import { POINTS, keypointConnections } from "../../utils/data";
@@ -253,11 +255,11 @@ function Yoga() {
                 <div className="yoga-container w-100 d-flex justify-content-around align-items-center">
                     <div className="yoga-image">
                         <img
-                            src="https://www.ekhartyoga.com/media/images/articles/content/Tree-pose-Vrksasana-Ekhart-Yoga.jpg"
+                            src={tree_pose}
                             alt=""
                             style={{
                                 width: "580px",
-                                height: "400px",
+                                height: "600px",
                                 objectFit: "cover",
                             }}
                         />
