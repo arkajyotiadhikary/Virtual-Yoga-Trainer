@@ -1,8 +1,6 @@
 .yoga-container {
-    height: 65vh;
     background-color: #f1faee;
-    position: absolute;
-    border-color: #1565c0;
+    height: inherit;
 }
 .yoga-container > div > #webcam {
     top: 22;

@@ -5,7 +5,8 @@ import backend from "@tensorflow/tfjs-backend-webgl";
 import Webcam from "react-webcam";
 import { count } from "../../utils/music";
 import "./Yoga.css";
-
+import { tutorials } from "../../utils/data/index";
+import { poseInstructions } from "../../utils/data";
 // import Instructions from "../../components/Instrctions/Instructions";
 
 import tree_pose from "./images/tree-pose.png";
@@ -14,6 +15,7 @@ import tree_pose from "./images/tree-pose.png";
 import { poseImages } from "../../utils/pose_images";
 import { POINTS, keypointConnections } from "../../utils/data";
 import { drawPoint, drawSegment } from "../../utils/helper";
+import States from "./States";
 
 let skeletonColor = "rgb(255,255,255)";
 let poseList = [
@@ -251,7 +253,7 @@ function Yoga() {
 
     if (isStartPose) {
         return (
-            <div>
+            <div className="" style={{ height: "70vh" }}>
                 <div className="yoga-container w-100 d-flex justify-content-around align-items-center">
                     <div className="yoga-image">
                         <img
@@ -271,75 +273,19 @@ function Yoga() {
                             height="400px"
                             id="webcam"
                             ref={webcamRef}
-                        ></Webcam>
+                        />
                         <canvas
                             ref={canvasRef}
                             id="my-canvas"
                             width="580px"
                             height="400px"
-                        ></canvas>
-                        <div className="states d-flex flex-column justify-content-around align-items-end w-100 h-100 me-5">
-                            <div
-                                className="d-flex justify-content-center align-items-center out-state"
-                                id="progress"
-                            >
-                                <div
-                                    className="state d-flex justify-content-center align-items-center"
-                                    id="progress"
-                                >
-                                    <span>40%</span>
-                                </div>
-                            </div>
-                            <div
-                                className="d-flex justify-content-center align-items-center out-state"
-                                id="heart-beat"
-                            >
-                                <div
-                                    className="state d-flex justify-content-center align-items-center"
-                                    id="heart-beat"
-                                >
-                                    <span>40%</span>
-                                </div>
-                            </div>
-                            <div
-                                className="d-flex justify-content-center align-items-center out-state"
-                                id="calori-burn"
-                            >
-                                <div
-                                    className="state d-flex justify-content-center align-items-center"
-                                    id="calori-burn"
-                                >
-                                    <span>40%</span>
-                                </div>
-                            </div>
-                            <div
-                                className="d-flex justify-content-center align-items-center out-state"
-                                id="time-spend"
-                            >
-                                <div
-                                    className="state d-flex justify-content-center align-items-center"
-                                    id="time-spend"
-                                >
-                                    <span>40%</span>
-                                </div>
-                            </div>
-                            <div
-                                className="d-flex justify-content-center align-items-center out-state"
-                                id="accuracy"
-                            >
-                                <div
-                                    className="state d-flex justify-content-center align-items-center"
-                                    id="accuracy"
-                                >
-                                    <span>40%</span>
-                                </div>
-                            </div>
-                        </div>
+                        />
+                        <States />
                         <button
                             onClick={stopPose}
                             className="btn text-white"
                             style={{
-                                top: 350,
+                                top: 438,
                                 backgroundColor: "#1d3557",
                                 marginRight: "50",
                                 position: "absolute",
@@ -351,19 +297,27 @@ function Yoga() {
                         </button>
                     </div>
                 </div>
-                <div className="d-flex justify-content-center"></div>
             </div>
         );
     }
 
     return (
-        <div className="yoga-container w-100 d-flex justify-content-center">
+        <div
+            className="yoga-container w-100 d-flex justify-content-center"
+            style={{ height: "70vh" }}
+        >
+            <div className="text-start pt-5">
+                <h1>Tutorial</h1>
+                {tutorials.map((i) => (
+                    <p>{i}</p>
+                ))}
+            </div>
             <button
                 onClick={startYoga}
                 className="btn text-white"
                 style={{
                     backgroundColor: "#1d3557",
-                    top: 350,
+                    top: 438,
                     marginRight: "50",
                     position: "absolute",
                     zIndex: 100,

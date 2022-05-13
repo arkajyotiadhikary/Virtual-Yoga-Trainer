@@ -1,7 +1,7 @@
 import Yoga from "./Yoga";
 const WorkoutWindow = () => {
     return (
-        <div style={{ height: "80vh" }}>
+        <div>
             <Yoga />
         </div>
     );

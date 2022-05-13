@@ -1,21 +1,18 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+
 const ProfileCard = () => {
     return (
         <div className="dropdown profile-card">
             <a
-                className="btn btn-secondary bg-transparent border-0"
+                className="btn"
                 href="#"
                 role="button"
                 id="dropdownMenuLink"
                 data-bs-toggle="dropdown"
                 aria-expanded="true"
             >
-                <img
-                    className="img px-2 "
-                    src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-                    height="25px"
-                    alt=""
-                />
+                <FontAwesomeIcon icon={faUser} />
             </a>
             <div
                 className="dropdown-menu dropdown-menu-end p-0"
@@ -48,9 +45,7 @@ const ProfileCard = () => {
                     </div>
                     <div class="card-footer bg-transparent">
                         <button class="btn btn-sm btn-outline-primary text-end">
-                        <a href="/signout">
-                            Logout
-                        </a>
+                            <a href="/signout">Logout</a>
                         </button>
                     </div>
                 </div>
