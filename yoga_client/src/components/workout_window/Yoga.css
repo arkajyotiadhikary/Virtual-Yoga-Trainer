@@ -1,6 +1,6 @@
 .yoga-container {
+    height: 70vh;
     background-color: #f1faee;
-    height: inherit;
 }
 .yoga-container > div > #webcam {
     top: 22;
@@ -75,4 +75,9 @@
 }
 .out-state#accuracy {
     background-color: hsl(134, 75%, 45%);
+}
+
+.instructions > ul {
+    font-size: large;
+    font-weight: 500;
 }

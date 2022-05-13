@@ -253,7 +253,7 @@ function Yoga() {
 
     if (isStartPose) {
         return (
-            <div className="" style={{ height: "70vh" }}>
+            <div className="" style={{ backgroundColor: "#f1faee" }}>
                 <div className="yoga-container w-100 d-flex justify-content-around align-items-center">
                     <div className="yoga-image">
                         <img
@@ -296,6 +296,14 @@ function Yoga() {
                             Stop Pose
                         </button>
                     </div>
+                </div>
+                <div className="instructions text-start mx-5 p-5">
+                    <h1>Instruction</h1>
+                    <ul>
+                        {poseInstructions[currentPose].map((i) => (
+                            <li className="m-3">{i}</li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         );
