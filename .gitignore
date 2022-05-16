@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/classification_model
 /.pnp
 .pnp.js
 

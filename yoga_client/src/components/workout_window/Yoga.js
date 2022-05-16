@@ -1,7 +1,7 @@
 import * as poseDetection from "@tensorflow-models/pose-detection";
 import * as tf from "@tensorflow/tfjs";
 import React, { useRef, useState, useEffect } from "react";
-import backend from "@tensorflow/tfjs-backend-webgl";
+// import backend from "@tensorflow/tfjs-backend-webgl";
 import Webcam from "react-webcam";
 import { count } from "../../utils/music";
 import "./Yoga.css";
@@ -144,7 +144,7 @@ function Yoga() {
             detectorConfig
         );
         const poseClassifier = await tf.loadLayersModel(
-            "https://models.s3.jp-tok.cloud-object-storage.appdomain.cloud/model.json"
+            "../../../../classification model/model/model.json"
         );
         const countAudio = new Audio(count);
         countAudio.loop = true;
