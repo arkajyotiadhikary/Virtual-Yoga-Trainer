@@ -1,3 +1,6 @@
+.yoga-body {
+    height: 70rem;
+}
 .yoga-container {
     height: 70vh;
     background-color: #f1faee;
@@ -80,4 +83,46 @@
 .instructions > ul {
     font-size: large;
     font-weight: 500;
+}
+
+.poses {
+    border: #212529;
+    height: 5rem;
+    width: 60rem;
+}
+
+.next-pose {
+    background-color: black;
+    border-radius: 5px;
+    height: 5rem;
+    width: 10rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.next-pose.selected {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #cfff00;
+}
+.next-pose .next-pose-content {
+    background-color: #212529;
+    border-radius: 5px;
+}
+
+.next-pose .next-pose-content .image {
+    width: 4rem;
+    height: 4rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.next-pose .next-pose-content .image > img {
+    height: 5.5rem;
+    width: 8rem;
+    object-fit: cover;
+}
+
+.next-pose .next-pose-content .name {
+    color: white;
+    width: 4.5rem;
 }
