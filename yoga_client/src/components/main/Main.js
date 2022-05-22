@@ -5,10 +5,12 @@ import BodyFocusPreview from "./preview/BodyFocusPreview";
 import DailyChallangePreview from "./preview/DailyChallangePreview";
 import CaloriChart from "./calori-chart/CaloriChart";
 
+import "./Main.css";
+
 const Main = () => {
     return (
         <div>
-            <div className="container-fluid">
+            <div className="container-fluid main-container">
                 <div className="row py-5">
                     <div className="col-md-3">
                         <ProfileView />

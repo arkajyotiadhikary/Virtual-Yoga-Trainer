@@ -15,10 +15,16 @@
 }
 
 .navbar .profile-card .dropdown-menu {
-    width: 300px;
+    height: 20rem;
+    width: 15rem;
 }
 
-#dropdownMenuLink {
+.dropdown-item {
+    background-color: #f1faee;
+    right: 100;
+}
+
+.drow #dropdownMenuLink {
     border-color: #1d3557;
     border-width: 2px;
     border-radius: 50%;
