@@ -15,7 +15,9 @@ const Main = () => {
                     <div className="col-md-3">
                         <ProfileView />
                     </div>
-                    <div className="col-md-9">{<CaloriChart />}</div>
+                    <div className="col-md-9">
+                        <CaloriChart />
+                    </div>
                 </div>
                 <div className="row justify-content-center py-5">
                     <LevelPreview />

@@ -3,12 +3,13 @@
 }
 
 .calori-bar {
-    height: 0.2rem;
+    height: 0.5rem;
 }
 
 #carouselExampleIndicators .carousel-inner {
     height: 30rem;
     width: 50rem;
+    /* background-color: rgb(236, 154, 154); */
 }
 
 #carouselExampleIndicators .carousel-item > img {
