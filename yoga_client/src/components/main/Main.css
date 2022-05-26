@@ -155,3 +155,10 @@
 .bodyfocus-preview-arm .background-img:hover {
     transform: scale(1.05);
 }
+
+.level-selector {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: white;
+    background-color: #1d3557;
+    margin-top: 20rem;
+}
