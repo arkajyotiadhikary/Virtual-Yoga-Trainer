@@ -73,7 +73,7 @@ const LevelPreview = () => {
                     <div className="carousel-item">
                         <img
                             src="https://media.istockphoto.com/photos/strong-male-yogi-standing-on-his-hands-with-both-feet-in-the-air-picture-id1283571490?b=1&k=20&m=1283571490&s=170667a&w=0&h=2T7cT5XAQZRloSIXri6khH9Vo_szVtiVJx-lvCBe4XE="
-                            class="d-block w-100"
+                            className="d-block w-100"
                             alt="..."
                         />
                     </div>

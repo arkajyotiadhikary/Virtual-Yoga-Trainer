@@ -1,18 +1,21 @@
 import * as poseDetection from "@tensorflow-models/pose-detection";
 import * as tf from "@tensorflow/tfjs";
 import React, { useRef, useState, useEffect } from "react";
-import backend from "@tensorflow/tfjs-backend-webgl";
+// import backend from "@tensorflow/tfjs-backend-webgl";
 import Webcam from "react-webcam";
 import { count } from "../../utils/music";
-
+import "./Yoga.css";
+import { tutorials } from "../../utils/data/index";
+import { poseInstructions } from "../../utils/data";
 // import Instructions from "../../components/Instrctions/Instructions";
-
-// import "./Yoga.css";
+import tree_pose from "./images/tree-pose.png";
 
 // import DropDown from "../../components/DropDown/DropDown";
 import { poseImages } from "../../utils/pose_images";
 import { POINTS, keypointConnections } from "../../utils/data";
 import { drawPoint, drawSegment } from "../../utils/helper";
+import States from "./States";
+import model_classification from "../../model.json";
 
 let skeletonColor = "rgb(255,255,255)";
 let poseList = [
@@ -239,6 +242,8 @@ function Yoga() {
     const startYoga = () => {
         setIsStartPose(true);
         runMovenet();
+        webcamRef.current.video.videoHeight = 580;
+        webcamRef.current.video.videoWidth = 400;
     };
 
     const stopPose = () => {
@@ -248,57 +253,139 @@ function Yoga() {
 
     if (isStartPose) {
         return (
-            <div className="yoga-container w-100">
-                <div className="d-flex justify-content-center">
-                    <button
-                        onClick={stopPose}
-                        className="btn btn-success"
-                        style={{
-                            top: 450,
-                            marginRight: "50",
-                            position: "absolute",
-                            zIndex: 100,
-                        }}
-                    >
-                        Stop Pose
-                    </button>
+            <div className="yoga-body" style={{ backgroundColor: "#f1faee" }}>
+                <div className="yoga-container w-100 d-flex justify-content-around align-items-center">
+                    <div className="yoga-image">
+                        <img
+                            src={tree_pose}
+                            alt=""
+                            style={{
+                                width: "580px",
+                                height: "600px",
+                                objectFit: "cover",
+                            }}
+                        />
+                    </div>
+
+                    <div className="cam d-flex justify-content-center align-items-center">
+                        <Webcam
+                            width="580"
+                            height="400px"
+                            id="webcam"
+                            ref={webcamRef}
+                        />
+                        <canvas
+                            ref={canvasRef}
+                            id="my-canvas"
+                            width="580px"
+                            height="400px"
+                        />
+                        <States />
+                        <button
+                            onClick={stopPose}
+                            className="btn text-white"
+                            style={{
+                                top: 438,
+                                backgroundColor: "#1d3557",
+                                marginRight: "50",
+                                position: "absolute",
+                                zIndex: 100,
+                                fontWeight: 600,
+                            }}
+                        >
+                            Stop Pose
+                        </button>
+                    </div>
+                </div>
+                <div className="d-flex  justify-content-center w-100">
+                    <div className="poses d-flex justify-content-around  my-5">
+                        <div className="next-pose selected">
+                            <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
+                                <div className="image bg-white d-flex align-items-center justify-content-center">
+                                    <img className="" src={tree_pose} alt="" />
+                                </div>
+                                <div className="name d-flex align-items-center justify-content-center h-100">
+                                    <p className="m-0">Tree</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="next-pose">
+                            <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
+                                <div className="image bg-white d-flex align-items-center justify-content-center">
+                                    <img className="" src={tree_pose} alt="" />
+                                </div>
+                                <div className="name d-flex align-items-center justify-content-center h-100">
+                                    <p className="m-0">Tree</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="next-pose">
+                            <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
+                                <div className="image bg-white d-flex align-items-center justify-content-center">
+                                    <img className="" src={tree_pose} alt="" />
+                                </div>
+                                <div className="name d-flex align-items-center justify-content-center h-100">
+                                    <p className="m-0">Tree</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="next-pose">
+                            <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
+                                <div className="image bg-white d-flex align-items-center justify-content-center">
+                                    <img className="" src={tree_pose} alt="" />
+                                </div>
+                                <div className="name d-flex align-items-center justify-content-center h-100">
+                                    <p className="m-0">Tree</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="next-pose">
+                            <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
+                                <div className="image bg-white d-flex align-items-center justify-content-center">
+                                    <img className="" src={tree_pose} alt="" />
+                                </div>
+                                <div className="name d-flex align-items-center justify-content-center h-100">
+                                    <p className="m-0">Tree</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="d-flex justify-content-center align-items-center w-100">
-                    <Webcam
-                        className="shadow"
-                        width="640px"
-                        height="480px"
-                        id="webcam"
-                        ref={webcamRef}
-                        style={{
-                            position: "absolute",
-                            top: 22,
-                        }}
-                    />
-                    <canvas
-                        ref={canvasRef}
-                        id="my-canvas"
-                        width="640px"
-                        height="480px"
-                        style={{
-                            position: "absolute",
-                            top: 22,
-                            zIndex: 1,
-                        }}
-                    ></canvas>
+                <div className="pose-name mt-4 ">
+                    <h2 className="fw-bold">{currentPose} Pose</h2>
+                </div>
+                <div className="instructions text-start mx-5 px-5">
+                    <h3>Instruction</h3>
+                    <ul>
+                        {poseInstructions[currentPose].map((i) => (
+                            <li className="m-3" key={i}>
+                                {i}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="yoga-container w-100 d-flex justify-content-center">
+        <div
+            className="yoga-container w-100 d-flex justify-content-center"
+            style={{ height: "70vh" }}
+        >
+            <div className="text-start pt-5">
+                <h1>Tutorial</h1>
+                {tutorials.map((i) => (
+                    <p key={i}>{i}</p>
+                ))}
+            </div>
             <button
                 onClick={startYoga}
-                className="btn btn-success"
+                className="btn text-white"
                 style={{
-                    top: 450,
+                    backgroundColor: "#1d3557",
+                    top: 438,
                     marginRight: "50",
                     position: "absolute",
                     zIndex: 100,

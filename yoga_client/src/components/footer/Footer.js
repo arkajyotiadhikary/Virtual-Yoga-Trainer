@@ -1,18 +1,28 @@
+import React from "react";
+import "./Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faFacebook,
+    faTwitter,
+    faDribbble,
+    faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+
 const Footer = () => {
     return (
-        <footer className="site-footer mt-5">
+        <footer className="site-footer">
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12 col-md-6">
                         <h6>About</h6>
-                        <p className="text-justify">
+                        <p className="text-start">
                             Ea rebum sadipscing lorem nonumy duo sed elitr amet
                             lorem dolore. Sadipscing erat et diam stet. Sea
                             justo magna voluptua accusam. Nonumy kasd sadipscing
                             eirmod magna sed. Et aliquyam eos sit sed, aliquyam
                             sanctus dolore eirmod kasd justo dolores dolor
                             consetetur, no ipsum et dolores justo vero labore
-                            lorem dolor,.
+                            lorem dolor.
                         </p>
                     </div>
 
@@ -20,32 +30,42 @@ const Footer = () => {
                         <h6>Categories</h6>
                         <ul className="footer-links">
                             <li>
-                                <a href="http://scanfcode.com/category/c-language/">
+                                <a
+                                    className="nav-link p-0"
+                                    href="http://scanfcode.com/category/c-language/"
+                                >
                                     af
                                 </a>
                             </li>
                             <li>
-                                <a href="http://scanfcode.com/category/front-end-development/">
+                                <a
+                                    className="nav-link p-0"
+                                    href="http://scanfcode.com/category/c-language/"
+                                >
                                     af
                                 </a>
                             </li>
                             <li>
-                                <a href="http://scanfcode.com/category/back-end-development/">
+                                <a
+                                    className="nav-link p-0"
+                                    href="http://scanfcode.com/category/c-language/"
+                                >
                                     af
                                 </a>
                             </li>
                             <li>
-                                <a href="http://scanfcode.com/category/java-programming-language/">
+                                <a
+                                    className="nav-link p-0"
+                                    href="http://scanfcode.com/category/c-language/"
+                                >
                                     af
                                 </a>
                             </li>
                             <li>
-                                <a href="http://scanfcode.com/category/android/">
-                                    af
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://scanfcode.com/category/templates/">
+                                <a
+                                    className="nav-link p-0"
+                                    href="http://scanfcode.com/category/c-language/"
+                                >
                                     af
                                 </a>
                             </li>
@@ -56,27 +76,42 @@ const Footer = () => {
                         <h6>Quick Links</h6>
                         <ul className="footer-links">
                             <li>
-                                <a href="http://scanfcode.com/about/">
+                                <a
+                                    className="nav-link p-0"
+                                    href="http://scanfcode.com/about/"
+                                >
                                     About Us
                                 </a>
                             </li>
                             <li>
-                                <a href="http://scanfcode.com/contact/">
+                                <a
+                                    className="nav-link p-0"
+                                    href="http://scanfcode.com/contact/"
+                                >
                                     Contact Us
                                 </a>
                             </li>
                             <li>
-                                <a href="http://scanfcode.com/contribute-at-scanfcode/">
+                                <a
+                                    className="nav-link p-0"
+                                    href="http://scanfcode.com/contribute-at-scanfcode/"
+                                >
                                     Contribute
                                 </a>
                             </li>
                             <li>
-                                <a href="http://scanfcode.com/privacy-policy/">
+                                <a
+                                    className="nav-link p-0"
+                                    href="http://scanfcode.com/privacy-policy/"
+                                >
                                     Privacy Policy
                                 </a>
                             </li>
                             <li>
-                                <a href="http://scanfcode.com/sitemap/">
+                                <a
+                                    className="nav-link p-0"
+                                    href="http://scanfcode.com/sitemap/"
+                                >
                                     Sitemap
                                 </a>
                             </li>
@@ -96,23 +131,35 @@ const Footer = () => {
                     <div className="col-md-4 col-sm-6 col-xs-12">
                         <ul className="social-icons">
                             <li>
-                                <a className="facebook" href="/#">
-                                    <i className="fa fa-facebook"></i>
+                                <a
+                                    className="facebook d-flex align-items-center justify-content-center text-white"
+                                    href="/#"
+                                >
+                                    <FontAwesomeIcon icon={faFacebook} />
                                 </a>
                             </li>
                             <li>
-                                <a className="twitter" href="/#">
-                                    <i className="fa fa-twitter"></i>
+                                <a
+                                    className="twitter d-flex align-items-center justify-content-center text-white"
+                                    href="/#"
+                                >
+                                    <FontAwesomeIcon icon={faTwitter} />
                                 </a>
                             </li>
                             <li>
-                                <a className="dribbble" href="/#">
-                                    <i className="fa fa-dribbble"></i>
+                                <a
+                                    className="dribbble d-flex align-items-center justify-content-center text-white"
+                                    href="/#"
+                                >
+                                    <FontAwesomeIcon icon={faDribbble} />
                                 </a>
                             </li>
                             <li>
-                                <a className="linkedin" href="/#">
-                                    <i className="fa fa-linkedin"></i>
+                                <a
+                                    className="linkedin d-flex align-items-center justify-content-center text-white"
+                                    href="/#"
+                                >
+                                    <FontAwesomeIcon icon={faLinkedin} />
                                 </a>
                             </li>
                         </ul>

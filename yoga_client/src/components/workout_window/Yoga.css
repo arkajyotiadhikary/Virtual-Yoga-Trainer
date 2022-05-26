@@ -1,0 +1,128 @@
+.yoga-body {
+    height: 70rem;
+}
+.yoga-container {
+    height: 70vh;
+    background-color: #f1faee;
+}
+.yoga-container > div > #webcam {
+    top: 22;
+    position: absolute;
+}
+
+.yoga-image > img {
+    border-radius: 5px;
+}
+
+.cam {
+    width: 580px;
+    height: 400px;
+}
+.yoga-container > div > canvas {
+    position: absolute;
+    top: 22;
+}
+
+.states {
+    height: "20rem";
+    z-index: 100;
+}
+
+.out-state {
+    border-radius: 50px;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    z-index: 99;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.state {
+    font-weight: 400;
+    border-radius: 50px;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    z-index: 100;
+}
+
+.state > span {
+    font-weight: 400;
+}
+
+.state#progress {
+    background-color: hsl(160, 41%, 70%);
+}
+.out-state#progress {
+    background-color: hsl(160, 41%, 45%);
+}
+.state#heart-beat {
+    background-color: #e63946;
+}
+.out-state#heart-beat {
+    background-color: hsl(355, 78%, 31%);
+}
+.state#calori-burn {
+    background-color: #e9c46a;
+}
+.out-state#calori-burn {
+    background-color: hsl(43, 74%, 41%);
+}
+.state#time-spend {
+    background-color: #457b9d;
+}
+.out-state#time-spend {
+    background-color: hsl(203, 39%, 19%);
+}
+.state#accuracy {
+    background-color: #80ed99;
+}
+.out-state#accuracy {
+    background-color: hsl(134, 75%, 45%);
+}
+
+.instructions > ul {
+    font-size: large;
+    font-weight: 500;
+}
+
+.poses {
+    border: #212529;
+    height: 5rem;
+    width: 60rem;
+}
+
+.next-pose {
+    background-color: black;
+    border-radius: 5px;
+    height: 5rem;
+    width: 10rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.next-pose.selected {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #cfff00;
+}
+.next-pose .next-pose-content {
+    background-color: #212529;
+    border-radius: 5px;
+}
+
+.next-pose .next-pose-content .image {
+    width: 4rem;
+    height: 4rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.next-pose .next-pose-content .image > img {
+    height: 5.5rem;
+    width: 8rem;
+    object-fit: cover;
+}
+
+.next-pose .next-pose-content .name {
+    color: white;
+    width: 4.5rem;
+}
