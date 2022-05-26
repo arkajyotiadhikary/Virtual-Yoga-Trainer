@@ -1,7 +1,7 @@
 const DailyChallangePreview = () => {
     return (
         <div>
-            <h2>Daily</h2>
+            <h2 className="fw-bold">Daily</h2>
             <div className="d-flex justify-content-around">
                 <div className="daily-preview-1">
                     <p>Sunrise Yoga</p>

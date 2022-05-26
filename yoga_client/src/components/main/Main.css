@@ -26,8 +26,8 @@
     background: url(https://images.thequint.com/thequint%2F2017-01%2F53d07c30-ea36-45e7-aaff-5de33b041db9%2Fyoga%20hero.png?rect=0%2C0%2C2000%2C1125);
     background-position: center;
     background-size: cover;
-    height: 20rem;
-    width: 50%;
+    height: 15rem;
+    width: 40%;
     transition: all 0.3s ease-in-out;
 }
 
@@ -45,8 +45,8 @@
     background-image: url(https://media4.s-nbcnews.com/i/MSNBC/Components/Video/201710/b_ost_SleepYoga_171012.jpg);
     background-position: center;
     background-size: cover;
-    height: 20rem;
-    width: 50%;
+    height: 15rem;
+    width: 40%;
     transition: all 0.3s ease-in-out;
 }
 .daily-preview-2:hover {
@@ -55,9 +55,9 @@
 
 .bodyfocus-preview-chest .background-img {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    font-size: 30px;
+    font-size: 1.3rem;
+    padding: 5%;
     color: #ffffff;
-    padding: 2%;
     margin: 1rem;
     background: linear-gradient(
             90deg,
@@ -67,7 +67,8 @@
         ),
         url(https://www.thehealthsite.com/wp-content/uploads/2017/02/chest-opening-poses-THS.jpg);
     background-position: center;
-    height: 20rem;
+    height: 15rem;
+    width: 80%;
     transition: all 0.3s ease-in-out;
 }
 .bodyfocus-preview-chest .background-img .title {
@@ -81,7 +82,8 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 30px;
     color: #ffffff;
-    padding: 2%;
+    font-size: 1.3rem;
+    padding: 5%;
     margin: 1rem;
     background: linear-gradient(
             90deg,
@@ -91,7 +93,8 @@
         ),
         url(https://mindbodygreen-res.cloudinary.com/image/upload/c_crop,x_0,y_0,w_1200,h_800/c_fill,w_800,h_400,g_auto,q_85,fl_lossy,f_jpg/org/3y03qt0d4kc55j2ht.jpg);
     background-position: center;
-    height: 20rem;
+    height: 15rem;
+    width: 80%;
     transition: all 0.3s ease-in-out;
 }
 .bodyfocus-preview-leg .background-img .title {
@@ -103,9 +106,9 @@
 
 .bodyfocus-preview-belly .background-img {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    font-size: 30px;
+    font-size: 1.3rem;
+    padding: 5%;
     color: #ffffff;
-    padding: 2%;
     margin: 1rem;
     background: linear-gradient(
             90deg,
@@ -116,7 +119,8 @@
         url(https://media.istockphoto.com/photos/young-attractive-woman-in-uddiyana-bandha-pose-grey-studio-back-picture-id664715880?b=1&k=20&m=664715880&s=170667a&w=0&h=nQOd0ksZbfWBfHx2eNUkW1suespkuLZTBnSKQZ7lgrw=);
     background-position: center;
     background-size: cover;
-    height: 20rem;
+    height: 15rem;
+    width: 80%;
     transition: all 0.3s ease-in-out;
 }
 .bodyfocus-preview-belly .background-img .title {
@@ -128,9 +132,9 @@
 
 .bodyfocus-preview-arm .background-img {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    font-size: 30px;
+    font-size: 1.3rem;
+    padding: 5%;
     color: #ffffff;
-    padding: 2%;
     margin: 1rem;
     background: linear-gradient(
             90deg,
@@ -141,7 +145,8 @@
         url(https://media.istockphoto.com/photos/you-cant-change-the-world-but-you-can-change-yours-picture-id1277539946?b=1&k=20&m=1277539946&s=170667a&w=0&h=Es12PLWFdl60n2q0ZnNSEE_q5JVNYDsNZuf9YeEGvrs=);
     background-position: center;
     background-size: cover;
-    height: 20rem;
+    height: 15rem;
+    width: 80%;
     transition: all 0.3s ease-in-out;
 }
 .bodyfocus-preview-arm .background-img .title {
