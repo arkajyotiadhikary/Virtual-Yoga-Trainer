@@ -45,30 +45,11 @@ const CaloriChart = () => {
             },
         ],
     };
-    const options = {
-        scales: {
-            y: {
-                display: false,
-            },
-        },
-        plugins: {
-            datalabels: {
-                display: true,
-                color: "black",
-                formatter: Math.round,
-                anchor: "end",
-                offset: -20,
-                align: "start",
-            },
-        },
-        legend: {
-            display: false,
-        },
-    };
 
     return (
         <Bar
             className="calori-bar"
+            plugins={[ChartDataLabels]}
             data={dumData}
             height="1500px"
             width="1500px"
@@ -81,10 +62,7 @@ const CaloriChart = () => {
                         display: true,
                     },
                     y: {
-                        grid: {
-                            display: false,
-                        },
-                        display: true,
+                        display: false,
                     },
                 },
                 maintainAspectRatio: false,

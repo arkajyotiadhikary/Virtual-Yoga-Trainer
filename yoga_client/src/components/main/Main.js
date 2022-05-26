@@ -12,10 +12,10 @@ const Main = () => {
         <div>
             <div className="container-fluid main-container">
                 <div className="row py-5">
-                    <div className="col-md-3">
+                    <div className="col-md-3 pe-0">
                         <ProfileView />
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-md-9 ps-0">
                         <CaloriChart />
                     </div>
                 </div>
