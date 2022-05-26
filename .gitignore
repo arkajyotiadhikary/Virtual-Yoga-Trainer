@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/classification_model
+/classification_model/yoga_poses
 /.pnp
 .pnp.js
 
