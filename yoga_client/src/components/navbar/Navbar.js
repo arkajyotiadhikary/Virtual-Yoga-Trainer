@@ -1,4 +1,7 @@
 import ProfileCard from "./ProfileCard";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -11,7 +14,19 @@ const Navbar = () => {
                             Virtual Trainer
                         </h1>
                     </div>
-                    <ProfileCard />
+                    <div className="dropdown ">
+                        <div
+                            href="#"
+                            id="dropdownMenuLink"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="true"
+                        >
+                            <FontAwesomeIcon icon={faUser} />
+                        </div>
+                        <div className="dropdown-menu dropdown-menu-end p-0">
+                            <ProfileCard />
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>

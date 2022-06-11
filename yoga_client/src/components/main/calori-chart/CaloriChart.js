@@ -19,26 +19,11 @@ const CaloriChart = () => {
             "Friday",
             "Saturday",
             "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday",
         ],
         datasets: [
             {
                 label: "Calories Burn This Month",
                 data: [
-                    55, 23, 96, 100, 67, 89, 10, 55, 23, 96, 100, 67, 89, 10,
                     55, 23, 96, 100, 67, 89, 10, 55, 23, 96, 100, 67, 89, 10,
                 ],
                 backgroundColor: ["rgb(236, 154, 154)"],
@@ -65,7 +50,14 @@ const CaloriChart = () => {
                         display: false,
                     },
                 },
+                responsive: true,
                 maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                        onClick: null,
+                    },
+                },
             }}
         />
     );

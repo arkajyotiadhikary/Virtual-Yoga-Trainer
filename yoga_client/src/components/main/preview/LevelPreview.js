@@ -1,10 +1,17 @@
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import BegginerImage from "../images/Begginer.png";
+import IntermidiateImage from "../images/iNTERMIDIATE.svg";
+import AdvanceImage from "../images/ADVANCE.svg";
+
 const LevelPreview = () => {
     return (
         <div className="level-preview">
             <h2>Choose Your Plan</h2>
             <div
                 id="carouselExampleIndicators"
-                className="carousel slide  d-flex justify-content-center m-4"
+                className="carousel slide  d-flex justify-content-center"
                 data-bs-ride="carousel"
             >
                 <div className="carousel-inner">
@@ -15,10 +22,11 @@ const LevelPreview = () => {
                             data-bs-target="#carouselExampleIndicators"
                             data-bs-slide="prev"
                         >
-                            <span
-                                className="carousel-control-prev-icon"
-                                aria-hidden="true"
-                            ></span>
+                            <FontAwesomeIcon
+                                className="pe-5"
+                                style={{ color: "#1d3557", height: "1.5rem" }}
+                                icon={faAngleLeft}
+                            />
                             <span className="visually-hidden">Previous</span>
                         </button>
                         <button
@@ -27,10 +35,11 @@ const LevelPreview = () => {
                             data-bs-target="#carouselExampleIndicators"
                             data-bs-slide="next"
                         >
-                            <span
-                                className="carousel-control-next-icon"
-                                aria-hidden="true"
-                            ></span>
+                            <FontAwesomeIcon
+                                className="ps-5"
+                                style={{ color: "#1d3557", height: "1.5rem" }}
+                                icon={faAngleRight}
+                            />
                             <span className="visually-hidden">Next</span>
                         </button>
                     </div>
@@ -51,7 +60,7 @@ const LevelPreview = () => {
                             <img
                                 height={"520rem"}
                                 style={{ objectFit: "cover" }}
-                                src="https://media.istockphoto.com/photos/african-trainer-and-group-of-people-meditating-during-yoga-class-picture-id1222262916?b=1&k=20&m=1222262916&s=170667a&w=0&h=-yKDc2yXo5mJ8SDpyKP-Rz91bR68o9rS9N8g-q7Oak8="
+                                src={BegginerImage}
                                 className="d-block w-100"
                                 alt="..."
                             />
@@ -73,9 +82,10 @@ const LevelPreview = () => {
                             </div>
                             <img
                                 height={"520rem"}
-                                style={{ objectFit: "cover" }}
-                                src="https://media.istockphoto.com/photos/strong-male-yogi-standing-on-his-hands-with-both-feet-in-the-air-picture-id1283571490?b=1&k=20&m=1283571490&s=170667a&w=0&h=2T7cT5XAQZRloSIXri6khH9Vo_szVtiVJx-lvCBe4XE="
-                                className="d-block w-100"
+                                width={"20rem"}
+                                // style={{ objectFit: "cover" }}
+                                src={IntermidiateImage}
+                                className="d-block w-100 p-5"
                                 alt="..."
                             />
                         </div>
@@ -96,9 +106,9 @@ const LevelPreview = () => {
                             </div>
                             <img
                                 height={"520rem"}
-                                style={{ objectFit: "cover" }}
-                                src="https://media.istockphoto.com/photos/yoga-reverse-warrior-pose-picture-id483465412?b=1&k=20&m=483465412&s=170667a&w=0&h=JBkrata6ox3NikqvL0x-z8lBu30DQkfTKK9NWGPmYQI="
-                                className="d-block w-100"
+                                // style={{ objectFit: "cover" }}
+                                src={AdvanceImage}
+                                className="d-block w-100 p-5"
                                 alt="..."
                             />
                         </div>

@@ -37,6 +37,9 @@ let flag = false;
 function Yoga() {
     const webcamRef = useRef(null);
     const canvasRef = useRef(null);
+    const startTimer = useRef(null);
+
+    const [startTime, setStartTime] = useState(3);
 
     const [startingTime, setStartingTime] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
@@ -62,6 +65,8 @@ function Yoga() {
         setPoseTime(0);
         setBestPerform(0);
     }, [currentPose]);
+
+    const decreaseTime = () => setStartTime((startTime) => startTime - 1);
 
     const CLASS_NO = {
         Chair: 0,
@@ -253,7 +258,12 @@ function Yoga() {
 
     if (isStartPose) {
         return (
-            <div className="yoga-body" style={{ backgroundColor: "#f1faee" }}>
+            <div
+                className="yoga-body"
+                style={{
+                    backgroundColor: "#f1faee",
+                }}
+            >
                 <div className="yoga-container w-100 d-flex justify-content-around align-items-center">
                     <div className="yoga-image">
                         <img
@@ -264,16 +274,15 @@ function Yoga() {
                                 height: "600px",
                                 objectFit: "cover",
                             }}
-                        />
+                        />{" "}
                     </div>
-
                     <div className="cam d-flex justify-content-center align-items-center">
                         <Webcam
                             width="580"
                             height="400px"
                             id="webcam"
                             ref={webcamRef}
-                        />
+                        />{" "}
                         <canvas
                             ref={canvasRef}
                             id="my-canvas"
@@ -293,78 +302,83 @@ function Yoga() {
                                 fontWeight: 600,
                             }}
                         >
-                            Stop Pose
-                        </button>
-                    </div>
-                </div>
+                            Stop Pose{" "}
+                        </button>{" "}
+                    </div>{" "}
+                </div>{" "}
                 <div className="d-flex  justify-content-center w-100">
                     <div className="poses d-flex justify-content-around  my-5">
                         <div className="next-pose selected">
                             <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
                                 <div className="image bg-white d-flex align-items-center justify-content-center">
                                     <img className="" src={tree_pose} alt="" />
-                                </div>
+                                </div>{" "}
                                 <div className="name d-flex align-items-center justify-content-center h-100">
-                                    <p className="m-0">Tree</p>
-                                </div>
-                            </div>
-                        </div>
+                                    <p className="m-0"> Tree </p>{" "}
+                                </div>{" "}
+                            </div>{" "}
+                        </div>{" "}
                         <div className="next-pose">
                             <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
                                 <div className="image bg-white d-flex align-items-center justify-content-center">
                                     <img className="" src={tree_pose} alt="" />
-                                </div>
+                                </div>{" "}
                                 <div className="name d-flex align-items-center justify-content-center h-100">
-                                    <p className="m-0">Tree</p>
-                                </div>
-                            </div>
-                        </div>
+                                    <p className="m-0"> Tree </p>{" "}
+                                </div>{" "}
+                            </div>{" "}
+                        </div>{" "}
                         <div className="next-pose">
                             <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
                                 <div className="image bg-white d-flex align-items-center justify-content-center">
                                     <img className="" src={tree_pose} alt="" />
-                                </div>
+                                </div>{" "}
                                 <div className="name d-flex align-items-center justify-content-center h-100">
-                                    <p className="m-0">Tree</p>
-                                </div>
-                            </div>
-                        </div>
+                                    <p className="m-0"> Tree </p>{" "}
+                                </div>{" "}
+                            </div>{" "}
+                        </div>{" "}
                         <div className="next-pose">
                             <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
                                 <div className="image bg-white d-flex align-items-center justify-content-center">
                                     <img className="" src={tree_pose} alt="" />
-                                </div>
+                                </div>{" "}
                                 <div className="name d-flex align-items-center justify-content-center h-100">
-                                    <p className="m-0">Tree</p>
-                                </div>
-                            </div>
-                        </div>
+                                    <p className="m-0"> Tree </p>{" "}
+                                </div>{" "}
+                            </div>{" "}
+                        </div>{" "}
                         <div className="next-pose">
                             <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
                                 <div className="image bg-white d-flex align-items-center justify-content-center">
                                     <img className="" src={tree_pose} alt="" />
-                                </div>
+                                </div>{" "}
                                 <div className="name d-flex align-items-center justify-content-center h-100">
-                                    <p className="m-0">Tree</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                    <p className="m-0"> Tree </p>{" "}
+                                </div>{" "}
+                            </div>{" "}
+                        </div>{" "}
+                    </div>{" "}
                 </div>
-
                 <div className="pose-name mt-4 ">
-                    <h2 className="fw-bold">{currentPose} Pose</h2>
-                </div>
+                    <h2 className="fw-bold">
+                        {" "}
+                        {currentPose}
+                        Pose{" "}
+                    </h2>{" "}
+                </div>{" "}
                 <div className="instructions text-start mx-5 px-5">
-                    <h3>Instruction</h3>
+                    <h3> Instruction </h3>{" "}
                     <ul>
+                        {" "}
                         {poseInstructions[currentPose].map((i) => (
                             <li className="m-3" key={i}>
-                                {i}
+                                {" "}
+                                {i}{" "}
                             </li>
-                        ))}
-                    </ul>
-                </div>
+                        ))}{" "}
+                    </ul>{" "}
+                </div>{" "}
             </div>
         );
     }
@@ -372,14 +386,16 @@ function Yoga() {
     return (
         <div
             className="yoga-container w-100 d-flex justify-content-center"
-            style={{ height: "70vh" }}
+            style={{
+                height: "70vh",
+            }}
         >
             <div className="text-start pt-5">
-                <h1>Tutorial</h1>
+                <h1> Tutorial </h1>{" "}
                 {tutorials.map((i) => (
-                    <p key={i}>{i}</p>
-                ))}
-            </div>
+                    <p key={i}> {i} </p>
+                ))}{" "}
+            </div>{" "}
             <button
                 onClick={startYoga}
                 className="btn text-white"
@@ -391,8 +407,8 @@ function Yoga() {
                     zIndex: 100,
                 }}
             >
-                Start Pose
-            </button>
+                Start Pose{" "}
+            </button>{" "}
         </div>
     );
 }
