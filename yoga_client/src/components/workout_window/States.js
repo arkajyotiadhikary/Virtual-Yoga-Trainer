@@ -1,6 +1,7 @@
 import React from "react";
 
-const States = () => {
+const States = (props) => {
+    const { yogaTimer } = props;
     return (
         <div className="states d-flex flex-column justify-content-around align-items-end w-100 h-100 me-5">
             <div
@@ -11,7 +12,7 @@ const States = () => {
                     className="state d-flex justify-content-center align-items-center"
                     id="progress"
                 >
-                    <span>40%</span>
+                    <span>{yogaTimer}s</span>
                 </div>
             </div>
             <div

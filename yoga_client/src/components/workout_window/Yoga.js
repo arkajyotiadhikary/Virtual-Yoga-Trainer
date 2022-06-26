@@ -1,3 +1,10 @@
+// TODO
+// --- yoga timer that will start after starting countdown ended and it will run for 20 sec.
+// --- after ending yoga timer a cooldown timer will run.
+// --- after cooldonw timer ended it will move to the next pose.
+
+// Changes may be done through useeffect
+
 import * as poseDetection from "@tensorflow-models/pose-detection";
 import * as tf from "@tensorflow/tfjs";
 import React, { useRef, useState, useEffect } from "react";
@@ -39,36 +46,55 @@ function Yoga() {
     const webcamRef = useRef(null);
     const canvasRef = useRef(null);
     const startTimerRef = useRef(null);
+    const yogaTimerRef = useRef(null);
+    const coolDownTimerRef = useState(null);
 
-    const [startTime, setStartTime] = useState(3);
+    const [startTime, setStartTime] = useState(5);
 
-    const [startingTime, setStartingTime] = useState(0);
-    const [currentTime, setCurrentTime] = useState(0);
-    const [poseTime, setPoseTime] = useState(0);
     const [bestPerform, setBestPerform] = useState(0);
+    const [yogaIndex, setYogaIndex] = useState(0);
     const [currentPose, setCurrentPose] = useState("Tree");
+    const [point, setPoint] = useState(0);
     const [isStartPose, setIsStartPose] = useState(false);
-    const [isStartTimerStart, setIsStartTimerStart] = useState(true);
+    const [isStartYoga, setIsStartYoga] = useState(false);
+    const [isStartTimer, setIsStartTimer] = useState(true);
+    const [isCoolDown, setIsCoolDown] = useState(false);
+    const [isNextPose, setIsNextPose] = useState(false);
+    // STATE -- TIMERS
+    const [currentTime, setCurrentTime] = useState(0);
+    const [startingTime, setStartingTime] = useState(0);
+    const [yogaTimer, setYogaTimer] = useState(5);
+    const [coolDownTimer, setCoolDownTimer] = useState(5);
+    const [poseTime, setPoseTime] = useState(0);
 
-    useEffect(() => {
-        const timeDiff = (currentTime - startingTime) / 1000;
-        if (flag) {
-            setPoseTime(timeDiff);
-        }
-        if ((currentTime - startingTime) / 1000 > bestPerform) {
-            setBestPerform(timeDiff);
-        }
+    // useEffect(() => {
+    //     const timeDiff = (currentTime - startingTime) / 1000;
+    //     if (flag) {
+    //         setPoseTime(timeDiff);
+    //     }
+    //     if ((currentTime - startingTime) / 1000 > bestPerform) {
+    //         setBestPerform(timeDiff);
+    //     }
 
-        console.log(bestPerform);
-    }, [currentTime]);
+    //     console.log(bestPerform);
+    // }, [currentTime]);
 
-    useEffect(() => {
-        setCurrentTime(0);
-        setPoseTime(0);
-        setBestPerform(0);
-    }, [currentPose]);
+    // useEffect(() => {
+    //     setCurrentTime(0);
+    //     setPoseTime(0);
+    //     setBestPerform(0);
+    // }, [currentPose]);
 
-    const decreaseTime = () => setStartTime((startTime) => startTime - 1);
+    // // useEffect(() => {
+    // //     if (coolDownTimer === 0) {
+
+    // //     }
+    // // }, [coolDownTimer]);
+
+    const decreaseStartTimer = () => setStartTime((startTime) => startTime - 1);
+    const decreaseYogaTimer = () => setYogaTimer((yogaTimer) => yogaTimer - 1);
+    const decreaseCoolDownTimer = () =>
+        setCoolDownTimer((coolDownTimer) => coolDownTimer - 1);
 
     const CLASS_NO = {
         Chair: 0,
@@ -224,7 +250,7 @@ function Yoga() {
 
                 classification.array().then((data) => {
                     const classNo = CLASS_NO[currentPose];
-                    console.log(data[0][classNo]);
+                    console.log("pose", point);
                     if (data[0][classNo] > 0.97) {
                         if (!flag) {
                             countAudio.play();
@@ -232,6 +258,7 @@ function Yoga() {
                             flag = true;
                         }
                         setCurrentTime(new Date(Date()).getTime());
+                        setPoint((point) => point + 1);
                         skeletonColor = "rgb(0,255,0)";
                     } else {
                         flag = false;
@@ -248,21 +275,45 @@ function Yoga() {
 
     const startYoga = () => {
         setIsStartPose(true);
-        setIsStartTimerStart(true);
+        setIsStartTimer(true);
         if (startTimerRef.current !== null)
             clearInterval(startTimerRef.current);
-        startTimerRef.current = setInterval(decreaseTime, 1000);
+        startTimerRef.current = setInterval(decreaseStartTimer, 1000);
     };
 
+    // Controling Timers
+
     if (startTime === 0) {
+        console.log("starting yoga");
+        setIsNextPose(false);
         clearInterval(startTimerRef.current);
-        setIsStartTimerStart(false);
+
+        setIsStartTimer(false);
+        setIsStartYoga(true);
         setStartTime(3);
+
+        if (yogaTimerRef.current !== null) clearInterval(yogaTimerRef.current);
+        yogaTimerRef.current = setInterval(decreaseYogaTimer, 1000);
         runMovenet();
+    }
+    if (yogaTimer === 0) {
+        setYogaTimer(5);
+        setIsStartYoga(false);
+        setStartTime(3);
+        clearInterval(yogaTimerRef.current);
+        clearInterval(startTimerRef.current);
+        setIsStartTimer(false);
+        setIsStartPose(false);
+        clearInterval(interval);
     }
 
     const stopPose = () => {
-        setIsStartTimerStart(false);
+        setIsStartYoga(false);
+        setStartTime(3);
+        setYogaTimer(20);
+        clearInterval(yogaTimerRef.current);
+        clearInterval(startTimerRef.current);
+        setIsStartTimer(false);
         setIsStartPose(false);
         clearInterval(interval);
     };
@@ -288,7 +339,7 @@ function Yoga() {
                         />
                     </div>
                     <div className="cam d-flex justify-content-center align-items-center">
-                        {isStartTimerStart ? (
+                        {isStartTimer ? (
                             <div
                                 className="starting-timer fw-bold"
                                 style={{
@@ -298,6 +349,20 @@ function Yoga() {
                                 }}
                             >
                                 {startTime}
+                            </div>
+                        ) : (
+                            ""
+                        )}
+                        {isCoolDown ? (
+                            <div
+                                className="coolDown-timer fw-bold"
+                                style={{
+                                    position: "absolute",
+                                    zIndex: 1000,
+                                    fontSize: 50,
+                                }}
+                            >
+                                {coolDownTimer}
                             </div>
                         ) : (
                             ""
@@ -314,7 +379,7 @@ function Yoga() {
                             width="580px"
                             height="400px"
                         />
-                        <States />
+                        {isStartYoga ? <States yogaTimer={yogaTimer} /> : ""}
                         <button
                             onClick={stopPose}
                             className="btn text-white"
