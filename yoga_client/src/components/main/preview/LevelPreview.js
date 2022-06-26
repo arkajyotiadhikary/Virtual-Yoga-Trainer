@@ -53,7 +53,15 @@ const LevelPreview = () => {
                                     width: "100%",
                                 }}
                             >
-                                <button className="level-selector btn">
+                                <button
+                                    className="level-selector btn"
+                                    onClick={() =>
+                                        window.open(
+                                            "http://localhost:3000/workout",
+                                            "_self"
+                                        )
+                                    }
+                                >
                                     Beginner
                                 </button>
                             </div>
@@ -76,7 +84,15 @@ const LevelPreview = () => {
                                     width: "100%",
                                 }}
                             >
-                                <button className="level-selector btn">
+                                <button
+                                    className="level-selector btn"
+                                    onClick={() =>
+                                        window.open(
+                                            "http://localhost:3000/workout",
+                                            "_self"
+                                        )
+                                    }
+                                >
                                     Intermidiate
                                 </button>
                             </div>
@@ -100,7 +116,15 @@ const LevelPreview = () => {
                                     width: "100%",
                                 }}
                             >
-                                <button className="level-selector btn">
+                                <button
+                                    className="level-selector btn"
+                                    onClick={() =>
+                                        window.open(
+                                            "http://localhost:3000/workout",
+                                            "_self"
+                                        )
+                                    }
+                                >
                                     Expert
                                 </button>
                             </div>

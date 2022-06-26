@@ -1,16 +1,17 @@
 import "./ProfileView.css";
 import Badges from "./Badges";
+import profilePic from "../images/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg";
 
 const ProfileView = () => {
     return (
         <div className="profile-card-preview d-flex flex-column align-items-center rounded border mx-5 text-white">
             <img
                 className="profile-pic mg-thumbnail bg-white"
-                src="https://img-01.stickers.cloud/packs/0e1824ba-545e-4bff-9078-572a1047556e/webp/b2e4202f-4f31-475e-a5a0-a75ca3dc01a6.webp"
+                src={profilePic}
                 alt=""
             />
             <div>
-                <h2 className="fw-bold">Arka</h2>
+                <h2 className="fw-bold mt-1">James</h2>
                 <p>Code</p>
             </div>
             <Badges />

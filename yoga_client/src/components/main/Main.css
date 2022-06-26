@@ -17,9 +17,8 @@
 }
 
 .daily-preview-1 {
-    font-weight: 1000;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    font-size: 30px;
+    font-size: 0.95rem;
     color: #ffffff;
     margin: 2%;
     padding: 2%;
@@ -36,9 +35,8 @@
 }
 
 .daily-preview-2 {
-    font-weight: 1000;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    font-size: 30px;
+    font-size: 0.95rem;
     color: #ffffff;
     margin: 2%;
     padding: 2%;
@@ -53,10 +51,17 @@
     transform: scale(1.05);
 }
 
-.bodyfocus-preview-chest .background-img {
+.bodyfocus-para {
+    font-size: 0.9rem;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.chest {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 1.3rem;
-    padding: 5%;
+    padding: 1%;
     color: #ffffff;
     margin: 1rem;
     background: linear-gradient(
@@ -71,19 +76,19 @@
     width: 80%;
     transition: all 0.3s ease-in-out;
 }
-.bodyfocus-preview-chest .background-img .title {
+.chest .title {
     font-weight: 1000;
 }
-.bodyfocus-preview-chest .background-img:hover {
+.chest:hover {
     transform: scale(1.05);
 }
 
-.bodyfocus-preview-leg .background-img {
+.leg {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 30px;
     color: #ffffff;
     font-size: 1.3rem;
-    padding: 5%;
+    padding: 1%;
     margin: 1rem;
     background: linear-gradient(
             90deg,
@@ -97,17 +102,17 @@
     width: 80%;
     transition: all 0.3s ease-in-out;
 }
-.bodyfocus-preview-leg .background-img .title {
+.leg.title {
     font-weight: 1000;
 }
-.bodyfocus-preview-leg .background-img:hover {
+.leg:hover {
     transform: scale(1.05);
 }
 
-.bodyfocus-preview-belly .background-img {
+.belly {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 1.3rem;
-    padding: 5%;
+    padding: 1%;
     color: #ffffff;
     margin: 1rem;
     background: linear-gradient(
@@ -123,17 +128,17 @@
     width: 80%;
     transition: all 0.3s ease-in-out;
 }
-.bodyfocus-preview-belly .background-img .title {
+.belly .title {
     font-weight: 1000;
 }
-.bodyfocus-preview-belly .background-img:hover {
+.belly:hover {
     transform: scale(1.05);
 }
 
-.bodyfocus-preview-arm .background-img {
+.arm {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 1.3rem;
-    padding: 5%;
+    padding: 1%;
     color: #ffffff;
     margin: 1rem;
     background: linear-gradient(
@@ -149,10 +154,10 @@
     width: 80%;
     transition: all 0.3s ease-in-out;
 }
-.bodyfocus-preview-arm .background-img .title {
+.arm .title {
     font-weight: 1000;
 }
-.bodyfocus-preview-arm .background-img:hover {
+.arm:hover {
     transform: scale(1.05);
 }
 

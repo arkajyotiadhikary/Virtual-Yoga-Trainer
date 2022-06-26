@@ -12,8 +12,8 @@ const Footer = () => {
     return (
         <footer className="site-footer">
             <div className="container">
-                <div className="row">
-                    <div className="col-sm-12 col-md-6">
+                <div className="d-flex">
+                    <div className="">
                         <h6>About</h6>
                         <p className="text-start">
                             Ea rebum sadipscing lorem nonumy duo sed elitr amet
@@ -24,52 +24,6 @@ const Footer = () => {
                             consetetur, no ipsum et dolores justo vero labore
                             lorem dolor.
                         </p>
-                    </div>
-
-                    <div className="col-xs-6 col-md-3">
-                        <h6>Categories</h6>
-                        <ul className="footer-links">
-                            <li>
-                                <a
-                                    className="nav-link p-0"
-                                    href="http://scanfcode.com/category/c-language/"
-                                >
-                                    af
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="nav-link p-0"
-                                    href="http://scanfcode.com/category/c-language/"
-                                >
-                                    af
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="nav-link p-0"
-                                    href="http://scanfcode.com/category/c-language/"
-                                >
-                                    af
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="nav-link p-0"
-                                    href="http://scanfcode.com/category/c-language/"
-                                >
-                                    af
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="nav-link p-0"
-                                    href="http://scanfcode.com/category/c-language/"
-                                >
-                                    af
-                                </a>
-                            </li>
-                        </ul>
                     </div>
 
                     <div className="col-xs-6 col-md-3">

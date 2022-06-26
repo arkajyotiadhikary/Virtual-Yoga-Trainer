@@ -47,54 +47,47 @@ function Yoga() {
     const canvasRef = useRef(null);
     const startTimerRef = useRef(null);
     const yogaTimerRef = useRef(null);
-    const coolDownTimerRef = useState(null);
 
     const [startTime, setStartTime] = useState(5);
 
     const [bestPerform, setBestPerform] = useState(0);
-    const [yogaIndex, setYogaIndex] = useState(0);
-    const [currentPose, setCurrentPose] = useState("Tree");
+    const [currentPose, setCurrentPose] = useState("Cobra");
     const [point, setPoint] = useState(0);
     const [isStartPose, setIsStartPose] = useState(false);
     const [isStartYoga, setIsStartYoga] = useState(false);
     const [isStartTimer, setIsStartTimer] = useState(true);
-    const [isCoolDown, setIsCoolDown] = useState(false);
-    const [isNextPose, setIsNextPose] = useState(false);
     // STATE -- TIMERS
     const [currentTime, setCurrentTime] = useState(0);
     const [startingTime, setStartingTime] = useState(0);
-    const [yogaTimer, setYogaTimer] = useState(5);
-    const [coolDownTimer, setCoolDownTimer] = useState(5);
+    const [yogaTimer, setYogaTimer] = useState(20);
     const [poseTime, setPoseTime] = useState(0);
 
-    // useEffect(() => {
-    //     const timeDiff = (currentTime - startingTime) / 1000;
-    //     if (flag) {
-    //         setPoseTime(timeDiff);
-    //     }
-    //     if ((currentTime - startingTime) / 1000 > bestPerform) {
-    //         setBestPerform(timeDiff);
-    //     }
+    const handleYogaChange = (e) => {
+        setCurrentPose(e.target.id);
+        console.log(e.target);
+    };
 
-    //     console.log(bestPerform);
-    // }, [currentTime]);
+    useEffect(() => {
+        setPoint(point + 1);
+        const timeDiff = (currentTime - startingTime) / 1000;
+        if (flag) {
+            setPoseTime(timeDiff);
+        }
+        if ((currentTime - startingTime) / 1000 > bestPerform) {
+            setBestPerform(timeDiff);
+        }
 
-    // useEffect(() => {
-    //     setCurrentTime(0);
-    //     setPoseTime(0);
-    //     setBestPerform(0);
-    // }, [currentPose]);
+        console.log("Point", point);
+    }, [currentTime]);
 
-    // // useEffect(() => {
-    // //     if (coolDownTimer === 0) {
-
-    // //     }
-    // // }, [coolDownTimer]);
+    useEffect(() => {
+        setCurrentTime(0);
+        setPoseTime(0);
+        setBestPerform(0);
+    }, [currentPose]);
 
     const decreaseStartTimer = () => setStartTime((startTime) => startTime - 1);
     const decreaseYogaTimer = () => setYogaTimer((yogaTimer) => yogaTimer - 1);
-    const decreaseCoolDownTimer = () =>
-        setCoolDownTimer((coolDownTimer) => coolDownTimer - 1);
 
     const CLASS_NO = {
         Chair: 0,
@@ -250,7 +243,6 @@ function Yoga() {
 
                 classification.array().then((data) => {
                     const classNo = CLASS_NO[currentPose];
-                    console.log("pose", point);
                     if (data[0][classNo] > 0.97) {
                         if (!flag) {
                             countAudio.play();
@@ -258,7 +250,6 @@ function Yoga() {
                             flag = true;
                         }
                         setCurrentTime(new Date(Date()).getTime());
-                        setPoint((point) => point + 1);
                         skeletonColor = "rgb(0,255,0)";
                     } else {
                         flag = false;
@@ -274,6 +265,7 @@ function Yoga() {
     };
 
     const startYoga = () => {
+        console.log(currentPose);
         setIsStartPose(true);
         setIsStartTimer(true);
         if (startTimerRef.current !== null)
@@ -285,21 +277,18 @@ function Yoga() {
 
     if (startTime === 0) {
         console.log("starting yoga");
-        setIsNextPose(false);
         clearInterval(startTimerRef.current);
-
         setIsStartTimer(false);
         setIsStartYoga(true);
-        setStartTime(3);
-
+        setStartTime(5);
         if (yogaTimerRef.current !== null) clearInterval(yogaTimerRef.current);
         yogaTimerRef.current = setInterval(decreaseYogaTimer, 1000);
         runMovenet();
     }
     if (yogaTimer === 0) {
-        setYogaTimer(5);
+        setYogaTimer(20);
         setIsStartYoga(false);
-        setStartTime(3);
+        setStartTime(5);
         clearInterval(yogaTimerRef.current);
         clearInterval(startTimerRef.current);
         setIsStartTimer(false);
@@ -309,7 +298,7 @@ function Yoga() {
 
     const stopPose = () => {
         setIsStartYoga(false);
-        setStartTime(3);
+        setStartTime(5);
         setYogaTimer(20);
         clearInterval(yogaTimerRef.current);
         clearInterval(startTimerRef.current);
@@ -353,20 +342,7 @@ function Yoga() {
                         ) : (
                             ""
                         )}
-                        {isCoolDown ? (
-                            <div
-                                className="coolDown-timer fw-bold"
-                                style={{
-                                    position: "absolute",
-                                    zIndex: 1000,
-                                    fontSize: 50,
-                                }}
-                            >
-                                {coolDownTimer}
-                            </div>
-                        ) : (
-                            ""
-                        )}
+
                         <Webcam
                             width="580"
                             height="400px"
@@ -379,12 +355,16 @@ function Yoga() {
                             width="580px"
                             height="400px"
                         />
-                        {isStartYoga ? <States yogaTimer={yogaTimer} /> : ""}
+                        {isStartYoga ? (
+                            <States yogaTimer={yogaTimer} point={point} />
+                        ) : (
+                            ""
+                        )}
                         <button
                             onClick={stopPose}
                             className="btn text-white"
                             style={{
-                                top: 438,
+                                top: 420,
                                 backgroundColor: "#1d3557",
                                 marginRight: "50",
                                 position: "absolute",
@@ -396,60 +376,7 @@ function Yoga() {
                         </button>
                     </div>
                 </div>
-                <div className="d-flex  justify-content-center w-100">
-                    <div className="poses d-flex justify-content-around  my-5">
-                        <div className="next-pose selected">
-                            <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
-                                <div className="image bg-white d-flex align-items-center justify-content-center">
-                                    <img className="" src={tree_pose} alt="" />
-                                </div>
-                                <div className="name d-flex align-items-center justify-content-center h-100">
-                                    <p className="m-0"> Tree </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="next-pose">
-                            <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
-                                <div className="image bg-white d-flex align-items-center justify-content-center">
-                                    <img className="" src={tree_pose} alt="" />
-                                </div>
-                                <div className="name d-flex align-items-center justify-content-center h-100">
-                                    <p className="m-0"> Tree </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="next-pose">
-                            <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
-                                <div className="image bg-white d-flex align-items-center justify-content-center">
-                                    <img className="" src={tree_pose} alt="" />
-                                </div>
-                                <div className="name d-flex align-items-center justify-content-center h-100">
-                                    <p className="m-0"> Tree </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="next-pose">
-                            <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
-                                <div className="image bg-white d-flex align-items-center justify-content-center">
-                                    <img className="" src={tree_pose} alt="" />
-                                </div>
-                                <div className="name d-flex align-items-center justify-content-center h-100">
-                                    <p className="m-0"> Tree </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="next-pose">
-                            <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
-                                <div className="image bg-white d-flex align-items-center justify-content-center">
-                                    <img className="" src={tree_pose} alt="" />
-                                </div>
-                                <div className="name d-flex align-items-center justify-content-center h-100">
-                                    <p className="m-0"> Tree </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <div className="pose-name mt-4 ">
                     <h2 className="fw-bold">
                         {currentPose}
@@ -472,24 +399,189 @@ function Yoga() {
 
     return (
         <div
-            className="yoga-container w-100 d-flex justify-content-center"
+            className="yoga-container w-100"
             style={{
-                height: "70vh",
+                height: "85vh",
             }}
         >
-            <div className="text-start pt-5">
+            <div className="text-start pt-5 ps-5 w-100">
                 <h1> Tutorial </h1>
                 {tutorials.map((i) => (
                     <p key={i}> {i} </p>
                 ))}
+            </div>
+            <div className="d-flex  justify-content-center">
+                <div className="poses d-flex justify-content-around  my-5 w-100">
+                    <div
+                        className={`${
+                            currentPose === "Tree"
+                                ? "next-pose selected"
+                                : "next-pose"
+                        }`}
+                    >
+                        <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
+                            <div className="image bg-white d-flex align-items-center justify-content-center">
+                                <img
+                                    src={tree_pose}
+                                    alt=""
+                                    id="Tree"
+                                    onClick={handleYogaChange}
+                                />
+                            </div>
+                            <div className="name d-flex align-items-center justify-content-center h-100">
+                                <p className="m-0 disable-text-selection">
+                                    Tree
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className={`${
+                            currentPose === "Warrior"
+                                ? "next-pose selected"
+                                : "next-pose"
+                        }`}
+                    >
+                        <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
+                            <div className="image bg-white d-flex align-items-center justify-content-center">
+                                <img
+                                    id="Warrior"
+                                    className=""
+                                    src={tree_pose}
+                                    alt=""
+                                    onClick={handleYogaChange}
+                                />
+                            </div>
+                            <div className="name d-flex align-items-center justify-content-center h-100">
+                                <p className="m-0 disable-text-selection">
+                                    Warrior
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className={`${
+                            currentPose === "Traingle"
+                                ? "next-pose selected"
+                                : "next-pose"
+                        }`}
+                    >
+                        <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
+                            <div className="image bg-white d-flex align-items-center justify-content-center">
+                                <img
+                                    id="Traingle"
+                                    src={tree_pose}
+                                    alt=""
+                                    onClick={handleYogaChange}
+                                />
+                            </div>
+                            <div className="name d-flex align-items-center justify-content-center h-100">
+                                <p className="m-0 disable-text-selection">
+                                    Traingle
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className={`${
+                            currentPose === "Shoulderstand"
+                                ? "next-pose selected"
+                                : "next-pose"
+                        }`}
+                    >
+                        <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
+                            <div className="image bg-white d-flex align-items-center justify-content-center">
+                                <img
+                                    id="Shoulderstand"
+                                    src={tree_pose}
+                                    alt=""
+                                    onClick={handleYogaChange}
+                                />
+                            </div>
+                            <div className="name d-flex align-items-center justify-content-center h-100">
+                                <p className="m-0 disable-text-selection">
+                                    Shoulder
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className={`${
+                            currentPose === "Cobra"
+                                ? "next-pose selected"
+                                : "next-pose"
+                        }`}
+                    >
+                        <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
+                            <div className="image bg-white d-flex align-items-center justify-content-center">
+                                <img
+                                    id="Cobra"
+                                    src={tree_pose}
+                                    alt=""
+                                    onClick={handleYogaChange}
+                                />
+                            </div>
+                            <div className="name d-flex align-items-center justify-content-center h-100">
+                                <p className="m-0 disable-text-selection">
+                                    Cobra
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className={`${
+                            currentPose === "Dog"
+                                ? "next-pose selected"
+                                : "next-pose"
+                        }`}
+                    >
+                        <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
+                            <div className="image bg-white d-flex align-items-center justify-content-center">
+                                <img
+                                    id="Dog"
+                                    src={tree_pose}
+                                    alt=""
+                                    onClick={handleYogaChange}
+                                />
+                            </div>
+                            <div className="name d-flex align-items-center justify-content-center h-100">
+                                <p className="m-0 disable-text-selection">
+                                    Dog
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className={`${
+                            currentPose === "Chair"
+                                ? "next-pose selected"
+                                : "next-pose"
+                        }`}
+                    >
+                        <div className="next-pose-content d-flex justify-content-around align-items-center h-100">
+                            <div className="image bg-white d-flex align-items-center justify-content-center">
+                                <img
+                                    id="Chair"
+                                    src={tree_pose}
+                                    alt=""
+                                    onClick={handleYogaChange}
+                                />
+                            </div>
+                            <div className="name d-flex align-items-center justify-content-center h-100">
+                                <p className="m-0 disable-text-selection">
+                                    Chair
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <button
                 onClick={startYoga}
                 className="btn text-white"
                 style={{
                     backgroundColor: "#1d3557",
-                    top: 438,
-                    marginRight: "50",
+                    top: 520,
                     position: "absolute",
                     zIndex: 100,
                 }}

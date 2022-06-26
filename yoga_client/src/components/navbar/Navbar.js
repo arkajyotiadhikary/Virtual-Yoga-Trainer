@@ -14,7 +14,7 @@ const Navbar = () => {
                             Virtual Trainer
                         </h1>
                     </div>
-                    <div className="dropdown ">
+                    <div className="dropdown me-3">
                         <div
                             href="#"
                             id="dropdownMenuLink"
@@ -23,7 +23,7 @@ const Navbar = () => {
                         >
                             <FontAwesomeIcon icon={faUser} />
                         </div>
-                        <div className="dropdown-menu dropdown-menu-end p-0">
+                        <div className="dropdown-menu dropdown-menu-end">
                             <ProfileCard />
                         </div>
                     </div>
