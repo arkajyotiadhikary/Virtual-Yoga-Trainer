@@ -16,6 +16,12 @@ import { tutorials } from "../../utils/data/index";
 import { poseInstructions } from "../../utils/data";
 // import Instructions from "../../components/Instrctions/Instructions";
 import tree_pose from "./images/tree-pose.png";
+import warrior_pose from "./images/Warrior.png";
+import cobra_pose from "./images/Cobra.png";
+import chair_pose from "./images/Chair.png";
+import shoulder_pose from "./images/Sholder.png";
+import triangle_pose from "./images/Triangle.png";
+import dog_pose from "./images/Dog.png";
 
 // import DropDown from "../../components/DropDown/DropDown";
 import { poseImages } from "../../utils/pose_images";
@@ -172,6 +178,8 @@ function Yoga() {
         const poseClassifier = await tf.loadLayersModel(
             "https://models.s3.jp-tok.cloud-object-storage.appdomain.cloud/model.json"
         );
+        // const poseClassifier = await tf.loadLayersModel(model_classification);
+
         const countAudio = new Audio(count);
         countAudio.loop = true;
         interval = setInterval(() => {
@@ -318,7 +326,23 @@ function Yoga() {
                 <div className="yoga-container w-100 d-flex justify-content-around align-items-center">
                     <div className="yoga-image">
                         <img
-                            src={tree_pose}
+                            src={
+                                currentPose === "Tree"
+                                    ? tree_pose
+                                    : currentPose === "Chair"
+                                    ? chair_pose
+                                    : currentPose === "Cobra"
+                                    ? cobra_pose
+                                    : currentPose === "Shoulderstand"
+                                    ? shoulder_pose
+                                    : currentPose === "Dog"
+                                    ? dog_pose
+                                    : currentPose === "Traingle"
+                                    ? triangle_pose
+                                    : currentPose === "Warrior"
+                                    ? warrior_pose
+                                    : ""
+                            }
                             alt=""
                             style={{
                                 width: "580px",
@@ -447,7 +471,7 @@ function Yoga() {
                                 <img
                                     id="Warrior"
                                     className=""
-                                    src={tree_pose}
+                                    src={warrior_pose}
                                     alt=""
                                     onClick={handleYogaChange}
                                 />
@@ -470,7 +494,7 @@ function Yoga() {
                             <div className="image bg-white d-flex align-items-center justify-content-center">
                                 <img
                                     id="Traingle"
-                                    src={tree_pose}
+                                    src={triangle_pose}
                                     alt=""
                                     onClick={handleYogaChange}
                                 />
@@ -493,7 +517,7 @@ function Yoga() {
                             <div className="image bg-white d-flex align-items-center justify-content-center">
                                 <img
                                     id="Shoulderstand"
-                                    src={tree_pose}
+                                    src={shoulder_pose}
                                     alt=""
                                     onClick={handleYogaChange}
                                 />
@@ -516,9 +540,10 @@ function Yoga() {
                             <div className="image bg-white d-flex align-items-center justify-content-center">
                                 <img
                                     id="Cobra"
-                                    src={tree_pose}
+                                    src={cobra_pose}
                                     alt=""
                                     onClick={handleYogaChange}
+                                    style={{ height: "3rem" }}
                                 />
                             </div>
                             <div className="name d-flex align-items-center justify-content-center h-100">
@@ -539,9 +564,10 @@ function Yoga() {
                             <div className="image bg-white d-flex align-items-center justify-content-center">
                                 <img
                                     id="Dog"
-                                    src={tree_pose}
+                                    src={dog_pose}
                                     alt=""
                                     onClick={handleYogaChange}
+                                    style={{ height: "3rem" }}
                                 />
                             </div>
                             <div className="name d-flex align-items-center justify-content-center h-100">
@@ -562,7 +588,7 @@ function Yoga() {
                             <div className="image bg-white d-flex align-items-center justify-content-center">
                                 <img
                                     id="Chair"
-                                    src={tree_pose}
+                                    src={chair_pose}
                                     alt=""
                                     onClick={handleYogaChange}
                                 />
